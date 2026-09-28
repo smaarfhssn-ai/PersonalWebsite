@@ -3167,14 +3167,20 @@ a{
 
 
 /* ==================================================
-   AI & DEVELOPMENT — NEW
+   AI & DEVELOPMENT — NEW (REPLACED)
 ================================================== */
 
 .ai-section{
+  position:relative;
   overflow:hidden;
 
   background:var(--dark);
   color:white;
+}
+
+.ai-section .container{
+  position:relative;
+  z-index:2;
 }
 
 .ai-title{
@@ -3201,9 +3207,12 @@ a{
 }
 
 
-/* MARQUEE */
+/* =========================
+   MARQUEE
+========================= */
 
 .marquee{
+  width:100%;
   overflow:hidden;
 
   margin:100px 0;
@@ -3218,28 +3227,40 @@ a{
   width:max-content;
 
   display:flex;
+  align-items:center;
 
   gap:65px;
 
-  animation:
-    marquee 30s linear infinite;
+  white-space:nowrap;
+
+  animation:marquee 30s linear infinite;
 }
 
 .marquee-track span{
+  flex:0 0 auto;
+
   color:#aaa;
 
   font-size:clamp(30px,4vw,55px);
   font-weight:600;
+
+  letter-spacing:-.03em;
 }
 
 @keyframes marquee{
+  from{
+    transform:translateX(0);
+  }
+
   to{
     transform:translateX(-50%);
   }
 }
 
 
-/* TOOL LABEL */
+/* =========================
+   TOOL LABEL
+========================= */
 
 .ai-tools-label{
   margin-bottom:30px;
@@ -3252,12 +3273,17 @@ a{
 }
 
 
-/* AI TOOL GRID */
+/* =========================
+   TOOL GRID
+========================= */
 
 .ai-tools-grid{
+  width:100%;
+
   display:grid;
 
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
 
   gap:20px;
 }
@@ -3265,15 +3291,15 @@ a{
 .ai-tool-card{
   position:relative;
 
+  width:100%;
+  min-width:0;
   min-height:390px;
 
   overflow:hidden;
 
   padding:35px;
 
-  border:
-    1px solid rgba(255,255,255,.04);
-
+  border:1px solid rgba(255,255,255,.07);
   border-radius:var(--radius);
 
   background:#29292C;
@@ -3281,6 +3307,8 @@ a{
   display:flex;
   flex-direction:column;
   justify-content:space-between;
+
+  isolation:isolate;
 
   transition:
     transform .45s var(--ease),
@@ -3292,6 +3320,7 @@ a{
   content:"";
 
   position:absolute;
+  z-index:-1;
 
   width:250px;
   height:250px;
@@ -3311,8 +3340,7 @@ a{
 .ai-tool-card:hover{
   transform:translateY(-6px);
 
-  border-color:
-    rgba(0,122,255,.18);
+  border-color:rgba(0,122,255,.18);
 
   background:#303033;
 }
@@ -3320,46 +3348,71 @@ a{
 .ai-tool-card:hover::after{
   transform:scale(1.4);
 
-  background:
-    rgba(0,122,255,.13);
+  background:rgba(0,122,255,.13);
 }
 
+
+/* CANVA — FULL WIDTH */
+
 .ai-tool-wide{
-  grid-column:1/-1;
+  grid-column:1 / -1;
 
   min-height:350px;
 }
+
+
+/* CARD TOP */
 
 .ai-tool-top{
   position:relative;
   z-index:2;
 
+  width:100%;
+
   display:flex;
+  align-items:flex-start;
   justify-content:space-between;
 
-  gap:30px;
+  gap:25px;
 }
 
 .ai-tool-top small{
+  flex:0 0 auto;
+
   color:#666;
+
+  font-size:12px;
+  font-weight:700;
 }
 
 .ai-tool-top span{
+  max-width:65%;
+
   color:var(--blue);
 
   font-size:10px;
   font-weight:800;
+  line-height:1.35;
   letter-spacing:.14em;
 
   text-align:right;
 }
 
+
+/* CARD CONTENT */
+
 .ai-tool-content{
   position:relative;
   z-index:2;
+
+  width:100%;
 }
 
 .ai-tool-content h3{
+  margin:0;
+
+  color:white;
+
   font-size:clamp(42px,5vw,70px);
   line-height:.95;
   letter-spacing:-.06em;
@@ -3373,13 +3426,19 @@ a{
   color:#888;
 
   font-size:16px;
+  font-weight:400;
   line-height:1.55;
 }
+
+
+/* CANVA LAYOUT */
 
 .ai-tool-wide .ai-tool-content{
   display:grid;
 
-  grid-template-columns:.8fr 1.2fr;
+  grid-template-columns:
+    minmax(0,.8fr)
+    minmax(0,1.2fr);
 
   gap:60px;
 
@@ -3391,10 +3450,14 @@ a{
 }
 
 
-/* AI BUILD FLOW */
+/* =========================
+   DEVELOPMENT PROCESS
+========================= */
 
 .ai-build{
   position:relative;
+
+  width:100%;
 
   margin-top:100px;
 
@@ -3421,8 +3484,7 @@ a{
 
   border-radius:50%;
 
-  background:
-    rgba(0,122,255,.16);
+  background:rgba(0,122,255,.16);
 
   filter:blur(35px);
 }
@@ -3462,6 +3524,8 @@ a{
   font-size:11px;
   font-weight:800;
   letter-spacing:.08em;
+
+  white-space:nowrap;
 
   transition:
     color .3s,
@@ -3878,10 +3942,81 @@ a{
   }
 
 
-  /* AI */
+  /* AI (TABLET OVERRIDE) */
+
+  .ai-section{
+    padding-top:110px;
+    padding-bottom:110px;
+  }
+
+  .ai-title{
+    max-width:850px;
+
+    font-size:clamp(70px,9vw,100px);
+  }
+
+  .ai-intro{
+    max-width:700px;
+
+    margin-top:55px;
+
+    font-size:24px;
+  }
+
+  .marquee{
+    margin:90px 0;
+  }
+
+  .marquee-track{
+    gap:70px;
+  }
+
+  .ai-tools-grid{
+    display:grid;
+
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+
+    gap:18px;
+  }
 
   .ai-tool-card{
+    display:flex;
+
+    min-width:0;
     min-height:360px;
+
+    padding:30px;
+  }
+
+  .ai-tool-wide{
+    grid-column:1 / -1;
+
+    min-height:330px;
+  }
+
+  .ai-tool-content h3{
+    font-size:50px;
+  }
+
+  .ai-tool-content p{
+    max-width:420px;
+
+    font-size:15px;
+  }
+
+  .ai-tool-wide .ai-tool-content{
+    grid-template-columns:
+      minmax(0,.75fr)
+      minmax(0,1.25fr);
+
+    gap:40px;
+  }
+
+  .ai-build{
+    margin-top:85px;
+
+    padding:45px;
   }
 
 }
@@ -4781,7 +4916,7 @@ a{
 
 
   /* =========================
-     AI — MOBILE
+     AI — MOBILE (REPLACED)
   ========================= */
 
   .ai-title{
