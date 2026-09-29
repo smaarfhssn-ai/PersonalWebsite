@@ -3741,43 +3741,9 @@ a{
   flex-wrap:wrap;
 }
 
-.ending-links a{
-  position:relative;
-
+.ending-links span{
   color:#aaa;
   font-weight:650;
-
-  transition:
-    color .25s ease,
-    transform .25s var(--ease);
-}
-
-.ending-links a::after{
-  content:"";
-
-  position:absolute;
-  left:0;
-  bottom:-5px;
-
-  width:100%;
-  height:1px;
-
-  background:var(--blue);
-
-  transform:scaleX(0);
-  transform-origin:right;
-
-  transition:transform .3s var(--ease);
-}
-
-.ending-links a:hover{
-  color:white;
-  transform:translateY(-2px);
-}
-
-.ending-links a:hover::after{
-  transform:scaleX(1);
-  transform-origin:left;
 }
 
 
