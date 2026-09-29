@@ -3399,6 +3399,112 @@ a{
 }
 
 
+/* =========================
+   AI TOOL LOGOS
+========================= */
+
+.ai-tool-logo{
+  position:absolute;
+  z-index:2;
+
+  top:92px;
+  left:35px;
+
+  width:92px;
+  height:92px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  border-radius:24px;
+
+  transition:
+    transform .45s var(--ease),
+    box-shadow .45s var(--ease);
+}
+
+.ai-tool-logo img{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+}
+
+
+/* CHATGPT */
+
+.ai-logo-chatgpt{
+  padding:14px;
+
+  background:white;
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.18);
+}
+
+
+/* CODEX */
+
+.ai-logo-codex{
+  padding:13px;
+
+  background:white;
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.18);
+}
+
+
+/* CLAUDE */
+
+.ai-logo-claude{
+  width:100px;
+  height:100px;
+
+  top:88px;
+
+  background:transparent;
+}
+
+
+/* GEMINI */
+
+.ai-logo-gemini{
+  width:100px;
+  height:100px;
+
+  top:88px;
+
+  background:transparent;
+}
+
+
+/* CANVA */
+
+.ai-logo-canva{
+  width:100px;
+  height:100px;
+
+  top:88px;
+
+  background:transparent;
+}
+
+
+/* LOGO HOVER */
+
+.ai-tool-card:hover .ai-tool-logo{
+  transform:
+    translateY(-5px)
+    scale(1.04);
+}
+
+
 /* CARD CONTENT */
 
 .ai-tool-content{
@@ -3987,6 +4093,27 @@ a{
     min-height:360px;
 
     padding:30px;
+  }
+
+  /* AI LOGO — TABLET */
+
+  .ai-tool-logo{
+    top:82px;
+    left:30px;
+
+    width:80px;
+    height:80px;
+
+    border-radius:20px;
+  }
+
+  .ai-logo-claude,
+  .ai-logo-gemini,
+  .ai-logo-canva{
+    top:78px;
+
+    width:88px;
+    height:88px;
   }
 
   .ai-tool-wide{
@@ -4953,6 +5080,29 @@ a{
 
     padding:28px;
   }
+
+
+  /* AI LOGO — MOBILE */
+
+  .ai-tool-logo{
+    top:76px;
+    left:28px;
+
+    width:76px;
+    height:76px;
+
+    border-radius:19px;
+  }
+
+  .ai-logo-claude,
+  .ai-logo-gemini,
+  .ai-logo-canva{
+    top:72px;
+
+    width:84px;
+    height:84px;
+  }
+
 
   .ai-tool-top{
     gap:15px;
