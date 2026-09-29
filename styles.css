@@ -3399,6 +3399,61 @@ a{
 }
 
 
+/* TOOL LOGO */
+
+.ai-tool-logo{
+  position:relative;
+  z-index:2;
+
+  width:78px;
+  height:78px;
+
+  margin:34px 0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:22px;
+
+  background:rgba(255,255,255,.055);
+
+  box-shadow:
+    0 16px 35px rgba(0,0,0,.16),
+    inset 0 1px 0 rgba(255,255,255,.045);
+
+  transition:
+    transform .45s var(--ease),
+    border-color .45s var(--ease),
+    background .45s var(--ease);
+}
+
+.ai-tool-logo img{
+  width:54px;
+  height:54px;
+
+  display:block;
+
+  object-fit:contain;
+
+  transition:transform .45s var(--ease);
+}
+
+.ai-tool-card:hover .ai-tool-logo{
+  transform:translateY(-2px);
+
+  border-color:rgba(0,122,255,.25);
+  background:rgba(255,255,255,.075);
+}
+
+.ai-tool-card:hover .ai-tool-logo img{
+  transform:scale(1.06);
+}
+
+
 /* CARD CONTENT */
 
 .ai-tool-content{
@@ -3993,6 +4048,18 @@ a{
     grid-column:1 / -1;
 
     min-height:330px;
+  }
+
+  .ai-tool-logo{
+    width:72px;
+    height:72px;
+
+    margin:30px 0;
+  }
+
+  .ai-tool-logo img{
+    width:50px;
+    height:50px;
   }
 
   .ai-tool-content h3{
@@ -4962,6 +5029,20 @@ a{
     max-width:190px;
 
     font-size:9px;
+  }
+
+  .ai-tool-logo{
+    width:68px;
+    height:68px;
+
+    margin:26px 0;
+
+    border-radius:19px;
+  }
+
+  .ai-tool-logo img{
+    width:46px;
+    height:46px;
   }
 
   .ai-tool-content h3{
