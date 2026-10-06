@@ -4,11 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Personal portfolio of Isma Arif — student, designer and developer.">
-  <meta name="theme-color" content="#f5f5f7">
+
+  <meta
+    name="description"
+    content="Personal portfolio of Isma Arif — student, creator and developer."
+  >
+
+  <meta name="theme-color" content="#050505">
 
   <meta property="og:title" content="Isma Arif — Personal Portfolio">
-  <meta property="og:description" content="Personal portfolio of Isma Arif — student, designer and developer.">
+  <meta
+    property="og:description"
+    content="Personal portfolio of Isma Arif — student, creator and developer."
+  >
   <meta property="og:image" content="og-image.jpg">
   <meta property="og:type" content="website">
 
@@ -22,9 +30,20 @@
 
 <div class="scroll-progress" id="scrollProgress"></div>
 
+<!-- ==================================================
+     LOADER
+================================================== -->
+
 <div class="site-loader" id="siteLoader">
+
+  <div class="loader-grid"></div>
+
   <div class="loader-content">
-    <p>PERSONAL PORTFOLIO · 2026</p>
+
+    <div class="loader-top">
+      <span>ISMA.DEV</span>
+      <span>PORTFOLIO / 2026</span>
+    </div>
 
     <h2>
       ISMA<br>
@@ -32,32 +51,50 @@
     </h2>
 
     <div class="loader-bottom">
+
       <strong>JUST DO IT.</strong>
-      <span id="loaderPercent">0%</span>
+
+      <span id="loaderPercent">
+        0%
+      </span>
+
     </div>
 
     <div class="loader-bar">
       <span id="loaderBar"></span>
     </div>
+
   </div>
+
 </div>
 
+
+<!-- ==================================================
+     NAV
+================================================== -->
 
 <header class="nav" id="nav">
 
   <div class="nav-inner">
 
-    <a href="#home" class="brand">ISMA</a>
+    <a href="#home" class="brand">
+      isma<span>.dev</span>
+    </a>
 
-    <nav class="desktop-nav">
+    <nav class="desktop-nav" aria-label="Primary navigation">
+
+      <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#leadership">Leadership</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#project">Project</a>
-      <a href="#future">Future</a>
+      <a href="#work">Work</a>
+      <a href="#journey">Journey</a>
       <a href="#ai">AI</a>
+
     </nav>
+
+    <div class="nav-status">
+      <i></i>
+      <span>AVAILABLE / 2026</span>
+    </div>
 
     <button
       class="menu-button"
@@ -72,13 +109,13 @@
   </div>
 
   <div class="mobile-nav" id="mobileNav">
+
+    <a href="#home">Home</a>
     <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#leadership">Leadership</a>
-    <a href="#achievements">Achievements</a>
-    <a href="#project">Project</a>
-    <a href="#future">Future</a>
+    <a href="#work">Work</a>
+    <a href="#journey">Journey</a>
     <a href="#ai">AI</a>
+
   </div>
 
 </header>
@@ -86,104 +123,754 @@
 
 <main>
 
-<!-- =========================
-     HERO
-========================= -->
 
-<section class="hero" id="home">
+<!-- ==================================================
+     01 / HERO
+================================================== -->
+
+<section class="hero grid-section" id="home">
 
   <div class="hero-glow"></div>
 
-  <div class="hero-inner">
+  <div class="hero-micro hero-micro-left">
+    PORTFOLIO / 2026
+  </div>
 
-    <p class="eyebrow reveal">
-      PERSONAL PORTFOLIO · 2026
-    </p>
+  <div class="hero-micro hero-micro-right">
+    2010 — NOW
+  </div>
 
-    <h1 class="hero-name reveal">
-      ISMA<br>
-      <span>ARIF.</span>
-    </h1>
+  <div class="container hero-layout">
 
-    <p class="hero-tagline reveal">
-      JUST DO IT.
-    </p>
+    <div class="hero-copy">
 
-    <p class="hero-role reveal">
-      Student <b>·</b>
-      Designer <b>·</b>
-      Developer
-    </p>
+      <p class="mono-label reveal">
+        + STUDENT · CREATOR · DEVELOPER
+      </p>
 
-    <a href="#about" class="explore reveal">
-      Explore ↓
-    </a>
+      <h1 class="hero-name reveal">
+        ISMA
+        <span>ARIF.</span>
+      </h1>
+
+      <div class="hero-details reveal">
+
+        <p class="hero-school">
+          FORM 4 · SCIENCE STREAM
+        </p>
+
+        <p class="hero-statement">
+          I turn curiosity into
+          things I can build.
+        </p>
+
+      </div>
+
+      <div class="hero-tags reveal">
+
+        <span>Coding</span>
+        <span>Design</span>
+        <span>AI</span>
+        <span>Problem Solving</span>
+
+      </div>
+
+      <a href="#about" class="explore reveal">
+        <span>EXPLORE MY JOURNEY</span>
+        <b>↓</b>
+      </a>
+
+    </div>
+
+
+    <div class="hero-art reveal">
+
+      <div class="hero-art-code">
+        01 / ISMA
+      </div>
+
+      <div class="portrait-back-text">
+        CREATE<br>
+        BUILD<br>
+        LEARN
+      </div>
+
+      <div class="portrait-frame">
+
+        <div class="portrait-placeholder">
+
+          <span>PORTRAIT</span>
+
+          <small>
+            Add your image as<br>
+            isma-hero.jpg
+          </small>
+
+        </div>
+
+        <img
+          src="isma-hero.jpg"
+          alt="Isma Arif"
+          data-hide-on-error="true"
+        >
+
+      </div>
+
+      <div class="portrait-note">
+        <span>BASED IN MALAYSIA</span>
+        <strong>↗</strong>
+      </div>
+
+    </div>
 
   </div>
 
-  <p class="hero-side">
-    2010 — NOW
-  </p>
+
+  <div class="hero-facts container reveal">
+
+    <article>
+
+      <span>01</span>
+
+      <div>
+        <small>FORM 4</small>
+        <strong>SCIENCE STREAM</strong>
+      </div>
+
+      <b>↗</b>
+
+    </article>
+
+    <article>
+
+      <span>02</span>
+
+      <div>
+        <small>NATIONAL</small>
+        <strong>COMPETITOR</strong>
+      </div>
+
+      <b>↗</b>
+
+    </article>
+
+    <article>
+
+      <span>03</span>
+
+      <div>
+        <small>BUILDER</small>
+        <strong>&amp; CREATOR</strong>
+      </div>
+
+      <b>↗</b>
+
+    </article>
+
+  </div>
 
 </section>
 
 
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- ==================================================
+     02 / WHY I BUILD
+================================================== -->
 
-<section class="section white" id="about">
+<section class="section narrative-section" id="why">
 
   <div class="container">
 
-    <p class="section-number reveal">
-      01 / ABOUT
-    </p>
+    <div class="section-head reveal">
 
-    <h2 class="display-title reveal">
+      <p class="mono-label">
+        02 / WHY I BUILD
+      </p>
+
+      <span>
+        CURIOSITY → CREATION
+      </span>
+
+    </div>
+
+    <h2 class="mega-title reveal">
+      Curiosity becomes<br>
+      <span>something real.</span>
+    </h2>
+
+    <div class="narrative-layout">
+
+      <div class="narrative-index reveal">
+        WHY?
+      </div>
+
+      <div class="narrative-copy reveal">
+
+        <p>
+          I enjoy asking questions,
+          exploring ideas and figuring
+          out how things work.
+        </p>
+
+        <p>
+          What excites me most is when
+          an idea becomes something real
+          — a website, an application,
+          a design or a solution that
+          someone can actually use.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="manifesto reveal">
+
+      <span>01</span>
+
+      <h3>
+        I don't just want to
+        understand technology.
+        <strong>
+          I want to build with it.
+        </strong>
+      </h3>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+     03 / ABOUT
+================================================== -->
+
+<section class="section grid-section" id="about">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <p class="mono-label">
+        03 / ABOUT ME
+      </p>
+
+      <span>
+        WHO I AM
+      </span>
+
+    </div>
+
+    <h2 class="mega-title reveal">
       Born in 2010.<br>
       <span>Built to create.</span>
     </h2>
 
-    <div class="about-layout">
 
-      <figure class="school-visual reveal">
+    <div class="about-editorial">
 
-        <img
-          src="sester-logo.png"
-          alt="SM Sains Kuala Terengganu campus"
-        >
-
-        <figcaption>
-          <span>SESTER</span>
-
-          <p>
-            SM Sains Kuala Terengganu
-          </p>
-        </figcaption>
-
-      </figure>
-
-      <div class="large-copy reveal">
+      <div class="about-copy reveal">
 
         <p>
           I'm a Form 4
           <strong>Science Stream</strong>
           student at
           <strong>
-            SM Sains Kuala Terengganu
-            (SESTER).
+            SM Sains Kuala Terengganu.
           </strong>
         </p>
 
         <p>
-          I'm interested in
-          <span>technology</span>,
-          <span>creativity</span>,
-          calculation and
-          <span>problem-solving</span>
-          — turning ideas into digital experiences.
+          I enjoy mathematics,
+          science, technology and
+          creative work — especially
+          when I can turn an idea into
+          something people can actually use.
         </p>
+
+        <p>
+          For me, learning is not just
+          about finding the right answer.
+          It's about asking better questions,
+          trying things out and improving
+          along the way.
+        </p>
+
+      </div>
+
+
+      <figure class="about-visual reveal">
+
+        <div class="about-visual-label">
+          SESTER / 2026
+        </div>
+
+        <img
+          src="sester-logo.png"
+          alt="SM Sains Kuala Terengganu"
+          loading="lazy"
+        >
+
+        <figcaption>
+
+          <strong>SESTER</strong>
+
+          <span>
+            SM Sains Kuala Terengganu
+          </span>
+
+        </figcaption>
+
+      </figure>
+
+    </div>
+
+
+    <div class="identity-grid reveal">
+
+      <article>
+        <small>01</small>
+        <span>FORM 4</span>
+        <h3>SCIENCE<br>STREAM</h3>
+        <b>↗</b>
+      </article>
+
+      <article>
+        <small>02</small>
+        <span>NATIONAL</span>
+        <h3>COMPETITOR</h3>
+        <b>↗</b>
+      </article>
+
+      <article>
+        <small>03</small>
+        <span>BUILDER</span>
+        <h3>&amp; CREATOR</h3>
+        <b>↗</b>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+     04 / EDUCATION
+================================================== -->
+
+<section class="section" id="education">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <p class="mono-label">
+        04 / EDUCATION
+      </p>
+
+      <span>
+        LEARNING JOURNEY
+      </span>
+
+    </div>
+
+    <h2 class="mega-title reveal">
+      My<br>
+      <span>Journey.</span>
+    </h2>
+
+
+    <div class="education-list">
+
+      <article class="education-row reveal">
+
+        <span class="education-year">
+          PRIMARY
+        </span>
+
+        <div>
+          <small>EDUCATION / 01</small>
+          <h3>SK Seri Budiman II</h3>
+          <p>Primary Education</p>
+        </div>
+
+        <b>↗</b>
+
+      </article>
+
+
+      <article class="education-row reveal">
+
+        <span class="education-year">
+          2023 — NOW
+        </span>
+
+        <div>
+          <small>EDUCATION / 02</small>
+          <h3>SM Sains Kuala Terengganu</h3>
+          <p>SESTER · Form 4 · Science Stream</p>
+        </div>
+
+        <b>↗</b>
+
+      </article>
+
+    </div>
+
+
+    <div class="learning-heading reveal">
+
+      <span>
+        WHAT I ENJOY LEARNING
+      </span>
+
+      <h3>
+        How I think.
+      </h3>
+
+    </div>
+
+
+    <div class="learning-grid">
+
+      <article class="reveal">
+
+        <small>01</small>
+
+        <h4>Calculation.</h4>
+
+        <p>
+          I enjoy finding patterns
+          and working through problems.
+        </p>
+
+      </article>
+
+      <article class="reveal">
+
+        <small>02</small>
+
+        <h4>Logic.</h4>
+
+        <p>
+          I like understanding
+          how things connect.
+        </p>
+
+      </article>
+
+      <article class="reveal">
+
+        <small>03</small>
+
+        <h4>
+          Problem-solving.
+        </h4>
+
+        <p>
+          I enjoy turning a difficult
+          problem into a workable solution.
+        </p>
+
+      </article>
+
+    </div>
+
+    <p class="education-ending reveal">
+      These interests eventually led me towards
+      <span>
+        technology and software development.
+      </span>
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+     05 / SKILLS
+================================================== -->
+
+<section class="section grid-section" id="skills">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <p class="mono-label">
+        05 / SKILLS &amp; INTERESTS
+      </p>
+
+      <span>
+        WHAT I DO
+      </span>
+
+    </div>
+
+    <h2 class="mega-title reveal">
+      Things I love<br>
+      <span>to do.</span>
+    </h2>
+
+
+    <div class="skills-interface reveal">
+
+      <div
+        class="skills-tabs"
+        role="tablist"
+        aria-label="Skills"
+      >
+
+        <button
+          class="skill-tab active"
+          data-skill="build"
+          type="button"
+        >
+          BUILD
+        </button>
+
+        <button
+          class="skill-tab"
+          data-skill="create"
+          type="button"
+        >
+          CREATE
+        </button>
+
+        <button
+          class="skill-tab"
+          data-skill="explore"
+          type="button"
+        >
+          EXPLORE
+        </button>
+
+        <button
+          class="skill-tab"
+          data-skill="beyond"
+          type="button"
+        >
+          BEYOND TECH
+        </button>
+
+      </div>
+
+
+      <div class="skills-stage">
+
+        <article
+          class="skill-panel active"
+          data-skill-panel="build"
+        >
+
+          <div class="skill-panel-number">
+            01
+          </div>
+
+          <div class="skill-panel-main">
+
+            <span>CODING</span>
+
+            <h3>
+              Build<br>
+              ideas.
+            </h3>
+
+          </div>
+
+          <div class="skill-panel-detail">
+
+            <p>
+              Coding<br>
+              Website Development<br>
+              App Development
+            </p>
+
+            <p class="skill-description">
+              I like turning ideas into
+              working digital products.
+            </p>
+
+            <a href="#project">
+              EVIDENCE ↗ RETRACE
+            </a>
+
+          </div>
+
+          <div class="terminal-art">
+
+            <div class="terminal-top">
+              <i></i>
+              <i></i>
+              <i></i>
+              <span>isma / build.js</span>
+            </div>
+
+            <code>
+              <span>01</span>
+              const idea = "build";<br>
+
+              <span>02</span>
+              const curiosity = true;<br>
+
+              <span>03</span>
+              <b>create(idea);</b><br>
+
+              <span>04</span>
+              // make it real.
+            </code>
+
+          </div>
+
+        </article>
+
+
+        <article
+          class="skill-panel"
+          data-skill-panel="create"
+        >
+
+          <div class="skill-panel-number">
+            02
+          </div>
+
+          <div class="skill-panel-main">
+
+            <span>VISUAL COMMUNICATION</span>
+
+            <h3>
+              Make it<br>
+              visual.
+            </h3>
+
+          </div>
+
+          <div class="skill-panel-detail">
+
+            <p>
+              Graphic Design<br>
+              Video Editing<br>
+              Photography
+            </p>
+
+            <p class="skill-description">
+              I enjoy making ideas easier
+              to see and understand.
+            </p>
+
+            <span class="evidence">
+              EVIDENCE ↗ DIGITAL ANIMATION /
+              STORYTELLING
+            </span>
+
+          </div>
+
+          <div class="abstract-art">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>CREATE</strong>
+          </div>
+
+        </article>
+
+
+        <article
+          class="skill-panel"
+          data-skill-panel="explore"
+        >
+
+          <div class="skill-panel-number">
+            03
+          </div>
+
+          <div class="skill-panel-main">
+
+            <span>EXPLORE</span>
+
+            <h3>
+              Understand<br>
+              more.
+            </h3>
+
+          </div>
+
+          <div class="skill-panel-detail">
+
+            <p>
+              AI Tools<br>
+              Mathematics<br>
+              Physics
+            </p>
+
+            <p class="skill-description">
+              I like understanding why things
+              work — and finding different
+              ways to solve problems.
+            </p>
+
+          </div>
+
+          <div class="orbit-art">
+            <div class="orbit-circle one"></div>
+            <div class="orbit-circle two"></div>
+            <div class="orbit-circle three"></div>
+            <strong>AI</strong>
+            <span>MATH</span>
+            <small>PHYSICS</small>
+          </div>
+
+        </article>
+
+
+        <article
+          class="skill-panel"
+          data-skill-panel="beyond"
+        >
+
+          <div class="skill-panel-number">
+            04
+          </div>
+
+          <div class="skill-panel-main">
+
+            <span>BEYOND TECH</span>
+
+            <h3>
+              Lead. Play.<br>
+              Grow.
+            </h3>
+
+          </div>
+
+          <div class="skill-panel-detail">
+
+            <p>
+              Sports<br>
+              Leadership
+            </p>
+
+            <p class="skill-description">
+              Technology is only one part
+              of who I am. I also learn through
+              teamwork, responsibility
+              and competition.
+            </p>
+
+          </div>
+
+          <div class="team-art">
+            <i></i>
+            <i></i>
+            <i></i>
+            <strong>LEAD</strong>
+          </div>
+
+        </article>
 
       </div>
 
@@ -194,56 +881,152 @@
 </section>
 
 
-<!-- =========================
-     EDUCATION
-========================= -->
+<!-- ==================================================
+     06 / HOW I BUILD
+================================================== -->
 
-<section class="section">
+<section class="section process-section" id="process">
 
   <div class="container">
 
-    <p class="section-number reveal">
-      02 / EDUCATION
-    </p>
+    <div class="section-head reveal">
 
-    <h2 class="display-title reveal">
-      My <span>Journey.</span>
+      <p class="mono-label">
+        06 / HOW I BUILD
+      </p>
+
+      <span>
+        // MY PROCESS
+      </span>
+
+    </div>
+
+    <h2 class="mega-title reveal">
+      Every project starts<br>
+      <span>with a question.</span>
     </h2>
 
-    <div class="timeline">
 
-      <article class="timeline-row reveal">
+    <div class="process-list">
 
-        <span>PRIMARY</span>
+      <article class="process-step reveal">
 
-        <div>
-          <h3>SK Seri Budiman II</h3>
-          <p>Primary Education</p>
+        <div class="process-number">
+          01
+        </div>
+
+        <div class="process-line">
+          <i></i>
+        </div>
+
+        <div class="process-copy">
+          <span>NOTICE</span>
+          <h3>Find a problem.</h3>
+          <p>What could work better?</p>
         </div>
 
       </article>
 
-      <article class="timeline-row reveal">
 
-        <span>2023 — NOW</span>
+      <article class="process-step reveal">
 
-        <div>
-          <h3>SM Sains Kuala Terengganu</h3>
-          <p>SESTER · Form 4 · Science Stream</p>
+        <div class="process-number">
+          02
+        </div>
+
+        <div class="process-line">
+          <i></i>
+        </div>
+
+        <div class="process-copy">
+          <span>THINK</span>
+          <h3>Explore the possibilities.</h3>
+          <p>
+            I research, ask questions
+            and sketch ideas.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="process-step reveal">
+
+        <div class="process-number">
+          03
+        </div>
+
+        <div class="process-line">
+          <i></i>
+        </div>
+
+        <div class="process-copy">
+          <span>BUILD</span>
+          <h3>Make it real.</h3>
+          <p>
+            I turn the idea into
+            a prototype or product.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="process-step reveal">
+
+        <div class="process-number">
+          04
+        </div>
+
+        <div class="process-line">
+          <i></i>
+        </div>
+
+        <div class="process-copy">
+          <span>TEST</span>
+          <h3>Find what doesn't work.</h3>
+          <p>
+            I test, debug and
+            listen to feedback.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="process-step reveal">
+
+        <div class="process-number">
+          05
+        </div>
+
+        <div class="process-line">
+          <i></i>
+        </div>
+
+        <div class="process-copy">
+          <span>IMPROVE</span>
+          <h3>Make it better.</h3>
+          <p>
+            Every mistake gives me
+            something to learn.
+          </p>
         </div>
 
       </article>
 
     </div>
 
-    <div class="statement reveal">
 
-      <small>I love</small>
+    <div class="process-ending reveal">
+
+      <span>
+        OUTPUT / LEARNING
+      </span>
 
       <h3>
-        calculation,<br>
-        logic &amp;<br>
-        <span>problem-solving.</span>
+        That's how<br>
+        <strong>I learn.</strong>
       </h3>
 
     </div>
@@ -253,332 +1036,86 @@
 </section>
 
 
-<!-- =========================
-     SKILLS
-========================= -->
+<!-- ==================================================
+     07 / LEADERSHIP
+================================================== -->
 
-<section class="section white" id="skills">
+<section class="section leadership-section" id="leadership">
 
   <div class="container">
 
-    <p class="section-number reveal">
-      03 / SKILLS &amp; INTERESTS
-    </p>
-
-    <h2 class="display-title reveal">
-      Things I love<br>
-      <span>to do.</span>
-    </h2>
-
-    <div class="bento">
-
-      <!-- CODE -->
-
-      <article class="skill-card skill-dark skill-code reveal">
-
-        <small>01</small>
-
-        <div class="skill-visual code-visual" aria-hidden="true">
-
-          <div class="code-window">
-
-            <div class="code-window-top">
-
-              <div class="code-dots">
-                <i></i>
-                <i></i>
-                <i></i>
-              </div>
-
-              <span>portfolio.js</span>
-
-            </div>
-
-            <div class="code-window-body">
-
-              <div class="code-line">
-                <span class="code-number">01</span>
-                <span><b>const</b> idea = <em>"build"</em>;</span>
-              </div>
-
-              <div class="code-line">
-                <span class="code-number">02</span>
-                <span><b>function</b> create() {</span>
-              </div>
-
-              <div class="code-line indent">
-                <span class="code-number">03</span>
-                <span>return <em>idea</em>;</span>
-              </div>
-
-              <div class="code-line">
-                <span class="code-number">04</span>
-                <span>}</span>
-              </div>
-
-              <div class="code-line code-muted">
-                <span class="code-number">05</span>
-                <span>// make it real.</span>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="code-symbol code-symbol-one">
-            &lt;/&gt;
-          </div>
-
-          <div class="code-symbol code-symbol-two">
-            { }
-          </div>
-
-        </div>
-
-        <div class="skill-content">
-
-          <label>CODE</label>
-
-          <h3>
-            Build ideas.
-          </h3>
-
-          <p>
-            Coding<br>
-            Website Development<br>
-            App Development
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <!-- CREATE -->
-
-      <article class="skill-card skill-create reveal">
-
-        <small>02</small>
-
-        <div class="skill-visual create-visual" aria-hidden="true">
-
-          <div class="design-layer layer-one"></div>
-          <div class="design-layer layer-two"></div>
-
-          <div class="design-canvas">
-
-            <div class="design-toolbar">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-
-            <div class="design-object">
-
-              <div class="design-shape"></div>
-
-              <i class="node node-one"></i>
-              <i class="node node-two"></i>
-              <i class="node node-three"></i>
-              <i class="node node-four"></i>
-
-            </div>
-
-            <div class="design-line line-one"></div>
-            <div class="design-line line-two"></div>
-
-          </div>
-
-          <div class="design-cursor">
-            <span>↖</span>
-          </div>
-
-        </div>
-
-        <div class="skill-content">
-
-          <label>CREATE</label>
-
-          <h3>
-            Make it visual.
-          </h3>
-
-          <p>
-            Graphic Design<br>
-            Video Editing<br>
-            Photography
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <!-- EXPLORE -->
-
-      <article class="skill-card skill-explore reveal">
-
-        <small>03</small>
-
-        <div class="skill-visual explore-visual" aria-hidden="true">
-
-          <div class="orbit-system">
-
-            <div class="orbit orbit-one"></div>
-            <div class="orbit orbit-two"></div>
-            <div class="orbit orbit-three"></div>
-
-            <div class="orbit-core">
-              AI
-            </div>
-
-            <div class="orbit-node orbit-math">
-              MATH
-            </div>
-
-            <div class="orbit-node orbit-physics">
-              PHYSICS
-            </div>
-
-            <div class="orbit-dot orbit-dot-one"></div>
-            <div class="orbit-dot orbit-dot-two"></div>
-
-          </div>
-
-        </div>
-
-        <div class="skill-content">
-
-          <label>EXPLORE</label>
-
-          <h3>
-            Understand more.
-          </h3>
-
-          <p>
-            AI Tools<br>
-            Mathematics<br>
-            Physics
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <!-- BEYOND TECH -->
-
-      <article class="skill-card skill-wide skill-beyond reveal">
-
-        <small>04</small>
-
-        <div class="skill-visual beyond-visual" aria-hidden="true">
-
-          <div class="play-field">
-
-            <div class="field-line"></div>
-            <div class="field-circle"></div>
-
-            <div class="player-node player-one">
-              01
-            </div>
-
-            <div class="player-node player-two">
-              02
-            </div>
-
-            <div class="player-node player-three">
-              03
-            </div>
-
-            <div class="lead-node">
-              LEAD
-            </div>
-
-            <svg
-              class="movement-path"
-              viewBox="0 0 500 180"
-              preserveAspectRatio="none"
-            >
-              <path d="M35 140 C130 30, 250 30, 450 105"></path>
-            </svg>
-
-            <div class="football">
-              <span></span>
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="skill-content">
-
-          <label>
-            BEYOND TECH
-          </label>
-
-          <h3>
-            Lead. Play. Grow.
-          </h3>
-
-          <p>
-            Football · Leadership
-          </p>
-
-        </div>
-
-      </article>
+    <div class="section-head reveal">
+
+      <p class="mono-label">
+        07 / LEADERSHIP
+      </p>
+
+      <span>
+        HIGH COUNCIL / 2026–27
+      </span>
 
     </div>
 
-  </div>
-
-</section>
-
-
-<!-- =========================
-     LEADERSHIP
-========================= -->
-
-<section class="section dark" id="leadership">
-
-  <div class="container">
-
-    <p class="section-number light reveal">
-      04 / LEADERSHIP
-    </p>
-
-    <p class="leadership-intro reveal">
-      Leading by doing.
-    </p>
-
-    <h2 class="leadership-title reveal">
-      VICE<br>
-      PRESIDENT.
+    <h2 class="leadership-heading reveal">
+      LEADING<br>
+      <span>BY DOING.</span>
     </h2>
 
-    <p class="leadership-subtitle reveal">
-      High Council · 2026/27
-    </p>
 
-    <figure class="photo-card main-photo reveal">
+    <div class="leadership-story">
 
-      <img
-        src="leadership.jpg"
-        alt="Leadership"
-        loading="lazy"
-      >
+      <div class="leadership-copy reveal">
 
-      <figcaption>
-        <div>
-          <span>LEADERSHIP</span>
-          <p>High Council · 2026/27</p>
-        </div>
-      </figcaption>
+        <p>
+          Being a leader is not just
+          having a position.
+        </p>
 
-    </figure>
+        <p>
+          It means being responsible when
+          nobody is watching, helping others
+          move forward and being willing
+          to step up when something needs
+          to be done.
+        </p>
 
-    <figure class="photo-card group-photo reveal">
+      </div>
+
+
+      <figure class="leadership-main-image reveal">
+
+        <img
+          src="leadership.jpg"
+          alt="Leadership"
+          loading="lazy"
+        >
+
+        <figcaption>
+          LEADERSHIP / 2026
+        </figcaption>
+
+      </figure>
+
+    </div>
+
+
+    <div class="leadership-position reveal">
+
+      <span>POSITION</span>
+
+      <h3>
+        VICE<br>
+        PRESIDENT
+      </h3>
+
+      <p>
+        HIGH COUNCIL · 2026/27
+      </p>
+
+    </div>
+
+
+    <figure class="leadership-group reveal">
 
       <img
         src="high-council-2026.jpg"
@@ -589,132 +1126,147 @@
 
       <figcaption>
 
-        <div>
-          <span>HIGH COUNCIL</span>
-          <p>SM Sains Kuala Terengganu</p>
-        </div>
+        <span>
+          HIGH COUNCIL
+        </span>
 
-        <strong>2026/27</strong>
+        <strong>
+          SM SAINS KUALA TERENGGANU
+        </strong>
+
+        <small>
+          2026 / 27
+        </small>
 
       </figcaption>
 
     </figure>
+
+
+    <div class="leadership-values reveal">
+
+      <span>RESPONSIBILITY</span>
+      <span>TEAMWORK</span>
+      <span>INITIATIVE</span>
+
+    </div>
 
   </div>
 
 </section>
 
 
-<!-- =========================
-     ACHIEVEMENTS
-========================= -->
+<!-- ==================================================
+     08 / ACHIEVEMENTS
+================================================== -->
 
-<section class="section achievements-section" id="achievements">
+<section class="section grid-section" id="achievements">
 
   <div class="container">
 
-    <p class="section-number reveal">
-      05 / ACHIEVEMENTS
-    </p>
+    <div class="section-head reveal">
 
-    <h2 class="display-title reveal">
-      Small steps.<br>
-      <span>Big milestones.</span>
+      <p class="mono-label">
+        08 / ACHIEVEMENTS
+      </p>
+
+      <span>
+        SELECTED MILESTONES
+      </span>
+
+    </div>
+
+    <h2 class="mega-title reveal">
+      Selected<br>
+      <span>Achievements.</span>
     </h2>
 
+    <p class="achievement-intro reveal">
+      Every competition gives me a chance
+      to test my ideas, learn from others
+      and improve what I can do.
+    </p>
 
-    <!-- 2024 -->
 
-    <div class="year-heading reveal">
-      2024
+    <div
+      class="year-tabs reveal"
+      role="tablist"
+      aria-label="Achievement year"
+    >
+
+      <button
+        class="year-tab"
+        data-year="2024"
+        type="button"
+      >
+        2024
+      </button>
+
+      <button
+        class="year-tab"
+        data-year="2025"
+        type="button"
+      >
+        2025
+      </button>
+
+      <button
+        class="year-tab active"
+        data-year="2026"
+        type="button"
+      >
+        2026
+      </button>
+
     </div>
 
-    <article class="award-feature reveal">
 
-      <div class="award-image">
-
-        <img
-          src="gold-2024.jpg"
-          alt="ICCP Gold Award 2024"
-          loading="lazy"
-        >
-
-      </div>
-
-      <div class="award-copy">
-
-        <label>GOLD AWARD</label>
-
-        <h3>
-          Digital Animation
-        </h3>
-
-        <p>
-          International Creative Creators
-          Playground (ICCP@SSP)
-        </p>
-
-        <strong>2024</strong>
-
-      </div>
-
-    </article>
+    <div class="achievement-grid">
 
 
-    <!-- 2025 -->
+      <!-- 2024 -->
 
-    <div class="year-heading reveal">
-      2025
-    </div>
+      <article
+        class="achievement-card reveal"
+        data-achievement-year="2024"
+      >
 
-    <article class="discont-showcase">
-
-      <div class="discont-heading reveal">
-
-        <div>
-
-          <label>
-            2ND PRIZE WINNER
-          </label>
-
-          <h3>
-            Cybernetic<br>
-            Classroom.
-          </h3>
-
-        </div>
-
-        <div class="discont-meta">
-
-          <span>
-            3RD DISCONT 2025
-          </span>
-
-          <p>
-            Digital Storytelling Contest
-          </p>
-
-        </div>
-
-      </div>
-
-      <div class="discont-gallery">
-
-        <figure class="discont-overview reveal">
+        <div class="achievement-image">
 
           <img
-            src="discont-winners-2025.png"
-            alt="3rd DISCONT 2025 winners announcement"
+            src="gold-2024.jpg"
+            alt="ICCP Gold Award 2024"
             loading="lazy"
           >
 
-          <figcaption>
-            Winners Announcement · Category B
-          </figcaption>
+        </div>
 
-        </figure>
+        <div class="achievement-info">
 
-        <figure class="discont-award reveal">
+          <div>
+            <span>GOLD AWARD</span>
+            <h3>Digital Animation</h3>
+            <p>
+              International Creative Creators
+              Playground (ICCP@SSP)
+            </p>
+          </div>
+
+          <strong>2024 ↗</strong>
+
+        </div>
+
+      </article>
+
+
+      <!-- 2025 -->
+
+      <article
+        class="achievement-card reveal"
+        data-achievement-year="2025"
+      >
+
+        <div class="achievement-image">
 
           <img
             src="discont-2025.jpg"
@@ -722,223 +1274,232 @@
             loading="lazy"
           >
 
-          <figcaption>
+        </div>
 
-            <span>2ND PRIZE</span>
+        <div class="achievement-info">
 
+          <div>
+            <span>2ND PRIZE WINNER</span>
+            <h3>Cybernetic Classroom</h3>
             <p>
-              Cybernetic Classroom
+              3RD DISCONT 2025 ·
+              Digital Storytelling Contest
             </p>
+          </div>
 
-          </figcaption>
+          <strong>2025 ↗</strong>
 
-        </figure>
+        </div>
 
-      </div>
-
-    </article>
+      </article>
 
 
-    <!-- 2026 -->
+      <!-- 2026 -->
 
-    <div class="year-heading reveal">
-      2026
+      <article
+        class="achievement-card reveal"
+        data-achievement-year="2026"
+      >
+
+        <div class="achievement-image">
+
+          <img
+            src="platinum-2026.jpg"
+            alt="ICCP Platinum Award 2026"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="achievement-info">
+
+          <div>
+            <span>PLATINUM AWARD</span>
+            <h3>Digital Animation</h3>
+            <p>
+              International Creative Creators
+              Playground (ICCP@SSP)
+            </p>
+          </div>
+
+          <strong>2026 ↗</strong>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="achievement-card reveal"
+        data-achievement-year="2026"
+      >
+
+        <div class="achievement-image">
+
+          <img
+            src="android-challenge-2026.jpg"
+            alt="Android Application Development Challenge 2026"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="achievement-info">
+
+          <div>
+            <span>NATIONAL LEVEL</span>
+            <h3>
+              Cabaran Pembangunan
+              Aplikasi Android 2026
+            </h3>
+            <p>
+              Represented Terengganu
+              at the national level.
+            </p>
+          </div>
+
+          <strong>2026 ↗</strong>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="achievement-card reveal"
+        data-achievement-year="2026"
+      >
+
+        <div class="achievement-image">
+
+          <img
+            src="expo-inovasi-2026.jpg"
+            alt="Ekspo Rekacipta dan Inovasi Terengganu 2026"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="achievement-info">
+
+          <div>
+            <span>BRONZE MEDAL</span>
+            <h3>
+              Ekspo Rekacipta &amp;
+              Inovasi Terengganu
+            </h3>
+            <p>Innovation · 2026</p>
+          </div>
+
+          <strong>2026 ↗</strong>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="achievement-card reveal"
+        data-achievement-year="2026"
+      >
+
+        <div class="achievement-image">
+
+          <img
+            src="umt-innovation-2026.jpg"
+            alt="UMT Inter-School Innovation Competition"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="achievement-info">
+
+          <div>
+            <span>CONSOLATION PRIZE</span>
+            <h3>Inter-School Innovation</h3>
+            <p>
+              25th Anniversary of
+              Universiti Malaysia Terengganu
+            </p>
+          </div>
+
+          <strong>2026 ↗</strong>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="achievement-card reveal"
+        data-achievement-year="2026"
+      >
+
+        <div class="achievement-image">
+
+          <img
+            src="cricket-sbp-2026.jpg"
+            alt="SBP Cricket Competition 2026"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="achievement-info">
+
+          <div>
+            <span>SPORT</span>
+            <h3>School Representative</h3>
+            <p>
+              SBP Cricket Competition · 2026
+            </p>
+          </div>
+
+          <strong>2026 ↗</strong>
+
+        </div>
+
+      </article>
+
     </div>
-
-    <article class="award-feature reveal">
-
-      <div class="award-image">
-
-        <img
-          src="platinum-2026.jpg"
-          alt="ICCP Platinum Award 2026"
-          loading="lazy"
-        >
-
-      </div>
-
-      <div class="award-copy">
-
-        <label>PLATINUM AWARD</label>
-
-        <h3>
-          Digital Animation
-        </h3>
-
-        <p>
-          International Creative Creators
-          Playground (ICCP@SSP)
-        </p>
-
-        <strong>2026</strong>
-
-      </div>
-
-    </article>
-
-
-    <article class="android-award reveal">
-
-      <div class="android-award-copy">
-
-        <label>NATIONAL LEVEL</label>
-
-        <h3>
-          Cabaran Pembangunan
-          Aplikasi Android 2026
-        </h3>
-
-        <p>
-          Represented Terengganu
-          at the national level.
-        </p>
-
-      </div>
-
-      <div class="android-award-image">
-
-        <img
-          src="android-challenge-2026.jpg"
-          alt="Android Application Development Challenge 2026"
-          loading="lazy"
-        >
-
-      </div>
-
-    </article>
-
-
-    <article class="achievement-visual reveal">
-
-      <div class="achievement-visual-image">
-
-        <img
-          src="expo-inovasi-2026.jpg"
-          alt="Ekspo Rekacipta dan Inovasi Terengganu 2026"
-          loading="lazy"
-        >
-
-      </div>
-
-      <div class="achievement-visual-copy">
-
-        <div class="achievement-index">
-          01
-        </div>
-
-        <label>
-          BRONZE MEDAL
-        </label>
-
-        <h3>
-          Ekspo Rekacipta &amp;<br>
-          Inovasi Terengganu.
-        </h3>
-
-        <p>
-          Innovation · 2026
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <article class="achievement-visual reverse reveal">
-
-      <div class="achievement-visual-image">
-
-        <img
-          src="umt-innovation-2026.jpg"
-          alt="UMT 25th Anniversary Inter-School Innovation Competition"
-          loading="lazy"
-        >
-
-      </div>
-
-      <div class="achievement-visual-copy">
-
-        <div class="achievement-index">
-          02
-        </div>
-
-        <label>
-          CONSOLATION PRIZE
-        </label>
-
-        <h3>
-          Inter-School<br>
-          Innovation.
-        </h3>
-
-        <p>
-          25th Anniversary of
-          Universiti Malaysia Terengganu
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <article class="achievement-visual cricket-achievement reveal">
-
-      <div class="achievement-visual-image">
-
-        <img
-          src="cricket-sbp-2026.jpg"
-          alt="SBP Cricket Competition 2026"
-          loading="lazy"
-        >
-
-      </div>
-
-      <div class="achievement-visual-copy">
-
-        <div class="achievement-index">
-          03
-        </div>
-
-        <label>SPORT</label>
-
-        <h3>
-          School<br>
-          Representative.
-        </h3>
-
-        <p>
-          SBP Cricket Competition · 2026
-        </p>
-
-      </div>
-
-    </article>
 
   </div>
 
 </section>
 
 
-<!-- =========================
-     RETRACE
-========================= -->
+<!-- ==================================================
+     09 / RETRACE
+================================================== -->
 
-<section class="section project-section" id="project">
+<section
+  class="section retrace-section"
+  id="project"
+>
 
-  <div class="project-glow project-glow-one"></div>
-  <div class="project-glow project-glow-two"></div>
+  <div class="retrace-glow"></div>
 
-  <div class="container project-container">
+  <div class="container">
 
-    <p class="section-number light reveal">
-      06 / FEATURED PROJECT
-    </p>
+    <div class="section-head reveal">
 
-    <div class="project-heading">
+      <p class="mono-label">
+        09 / FEATURED PROJECT
+      </p>
+
+      <span>
+        2026 / APPLICATION
+      </span>
+
+    </div>
+
+
+    <div class="retrace-heading">
 
       <div>
 
-        <div class="retrace-logo-wrap reveal">
+        <div class="retrace-logo reveal">
 
           <img
             src="retrace-logo.jpg"
@@ -948,13 +1509,13 @@
 
         </div>
 
-        <h2 class="project-title reveal">
+        <h2 class="retrace-title reveal">
           RETRACE.
         </h2>
 
       </div>
 
-      <div class="project-heading-copy reveal">
+      <div class="retrace-intro reveal">
 
         <span>
           LOST &amp; FOUND APPLICATION
@@ -969,19 +1530,46 @@
 
     </div>
 
-    <h3 class="project-tagline reveal">
-      Lost things.<br>
-      <span>Found smarter.</span>
+
+    <h3 class="retrace-tagline reveal">
+      LOST THINGS.<br>
+      <span>FOUND SMARTER.</span>
     </h3>
+
+
+    <div class="project-meta reveal">
+
+      <article>
+        <span>ROLE</span>
+        <strong>Developer</strong>
+      </article>
+
+      <article>
+        <span>TYPE</span>
+        <strong>Lost &amp; Found System</strong>
+      </article>
+
+      <article>
+        <span>STAGE</span>
+        <strong>National Level</strong>
+      </article>
+
+      <article>
+        <span>YEAR</span>
+        <strong>2026</strong>
+      </article>
+
+    </div>
 
 
     <div class="phone-stage reveal">
 
-      <div class="phone phone-left" data-phone-speed="-0.35">
+      <div
+        class="phone phone-left"
+        data-phone-speed="-0.35"
+      >
 
-        <div class="phone-top">
-          <span></span>
-        </div>
+        <div class="phone-top"></div>
 
         <img
           src="retrace-welcome.jpg"
@@ -991,25 +1579,29 @@
 
       </div>
 
-      <div class="phone phone-main" data-phone-speed="-0.7">
 
-        <div class="phone-top">
-          <span></span>
-        </div>
+      <div
+        class="phone phone-main"
+        data-phone-speed="-0.7"
+      >
+
+        <div class="phone-top"></div>
 
         <img
           src="retrace-items.jpg"
-          alt="RETRACE Find Your Items Screen"
+          alt="RETRACE Items Screen"
           loading="lazy"
         >
 
       </div>
 
-      <div class="phone phone-right" data-phone-speed="-0.25">
 
-        <div class="phone-top">
-          <span></span>
-        </div>
+      <div
+        class="phone phone-right"
+        data-phone-speed="-0.25"
+      >
+
+        <div class="phone-top"></div>
 
         <img
           src="retrace-marketplace.jpg"
@@ -1022,76 +1614,151 @@
     </div>
 
 
-    <div class="project-features">
+    <!-- CASE STUDY -->
 
-      <article class="project-feature reveal">
+    <div class="case-study">
 
-        <small>01</small>
 
-        <span>FIND</span>
+      <article class="case-row reveal">
 
-        <h4>
-          Lost &amp; Found
-        </h4>
+        <span>
+          01 / THE PROBLEM
+        </span>
 
-        <p>
-          Browse and identify
-          reported items quickly.
-        </p>
+        <div>
+
+          <h3>
+            Lost items are easy
+            to report.
+            <strong>
+              Managing them isn't.
+            </strong>
+          </h3>
+
+          <p>
+            Lost-and-found systems can become
+            difficult to manage when reports,
+            claims and item information
+            are handled manually.
+          </p>
+
+          <p>
+            I wanted to explore how a digital
+            system could make the process more
+            organised and easier to use.
+          </p>
+
+        </div>
 
       </article>
 
-      <article class="project-feature reveal">
 
-        <small>02</small>
+      <article class="case-row reveal">
 
-        <span>MANAGE</span>
+        <span>
+          02 / THE IDEA
+        </span>
 
-        <h4>
-          Admin System
-        </h4>
+        <div>
 
-        <p>
-          Organised management
-          for reports and claims.
-        </p>
+          <h3>
+            One system.
+            <strong>
+              One workflow.
+            </strong>
+          </h3>
+
+          <p>
+            Build one system where students
+            can report, browse and claim lost
+            or found items while administrators
+            manage the process.
+          </p>
+
+        </div>
 
       </article>
 
-      <article class="project-feature reveal">
 
-        <small>03</small>
+      <article class="case-row solution-row reveal">
 
-        <span>REUSE</span>
+        <span>
+          03 / THE SOLUTION
+        </span>
 
-        <h4>
-          Marketplace
-        </h4>
+        <div class="solution-grid">
 
-        <p>
-          A new purpose for
-          eligible unclaimed items.
-        </p>
+          <article>
+
+            <small>01</small>
+            <span>FIND</span>
+
+            <h4>
+              Lost &amp; Found
+            </h4>
+
+            <p>
+              Browse and identify
+              reported items quickly.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <small>02</small>
+            <span>MANAGE</span>
+
+            <h4>
+              Admin System
+            </h4>
+
+            <p>
+              Organised management
+              for reports and claims.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <small>03</small>
+            <span>REUSE</span>
+
+            <h4>
+              Marketplace
+            </h4>
+
+            <p>
+              A new purpose for
+              eligible unclaimed items.
+            </p>
+
+          </article>
+
+        </div>
 
       </article>
 
     </div>
 
 
-    <div class="admin-showcase">
+    <div class="admin-case">
 
-      <div class="admin-copy reveal">
+      <div class="admin-case-copy reveal">
 
-        <p class="mini-label">
+        <span>
           BUILT FOR REAL USE
-        </p>
+        </span>
 
         <h3>
           More than<br>
-          <span>an interface.</span>
+          <strong>an interface.</strong>
         </h3>
 
-        <p class="admin-description">
+        <p>
           RETRACE includes an admin system
           to manage reports, item status
           and the lost-and-found workflow
@@ -1100,17 +1767,20 @@
 
       </div>
 
-      <div class="admin-device reveal">
 
-        <div class="admin-device-bar">
+      <div class="admin-screen reveal">
 
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="browser-bar">
 
-          <p>
-            RETRACE · ADMIN
-          </p>
+          <div>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+
+          <span>
+            RETRACE / ADMIN
+          </span>
 
         </div>
 
@@ -1125,13 +1795,42 @@
     </div>
 
 
-    <div class="national-stage">
+    <div class="project-learning reveal">
 
-      <div class="national-year reveal">
+      <span>
+        04 / WHAT I LEARNED
+      </span>
+
+      <h3>
+        Building RETRACE taught me
+        that developing an application
+        is not only about
+        <strong>writing code.</strong>
+      </h3>
+
+      <p>
+        I had to think about users,
+        organise information, solve problems,
+        test different ideas and improve
+        the system when something didn't work.
+      </p>
+
+      <div>
+        BUILD.
+        <span>TEST.</span>
+        IMPROVE.
+      </div>
+
+    </div>
+
+
+    <div class="national-stage reveal">
+
+      <div class="national-year">
         2026
       </div>
 
-      <div class="national-copy reveal">
+      <div class="national-copy">
 
         <span>
           TERENGGANU → NATIONAL
@@ -1139,13 +1838,14 @@
 
         <h3>
           From a school idea<br>
-          to the national stage.
+          <strong>
+            to the national stage.
+          </strong>
         </h3>
 
         <p>
-          Represented Terengganu
-          at the national level in
-          Cabaran Pembangunan
+          Represented Terengganu at the
+          national level in Cabaran Pembangunan
           Aplikasi Android 2026.
         </p>
 
@@ -1158,78 +1858,216 @@
 </section>
 
 
-<!-- =========================
-     FUTURE
-========================= -->
+<!-- ==================================================
+     10 / OTHER WORK
+================================================== -->
 
-<section class="section future-section" id="future">
+<section class="section grid-section" id="work">
 
   <div class="container">
 
-    <p class="section-number reveal">
-      07 / FUTURE
-    </p>
+    <div class="section-head reveal">
 
-    <h2 class="display-title reveal">
-      Where I'm<br>
-      <span>going.</span>
+      <p class="mono-label">
+        10 / OTHER WORK
+      </p>
+
+      <span>
+        SELECTED CREATIVE WORK
+      </span>
+
+    </div>
+
+    <h2 class="mega-title reveal">
+      Portfolio<br>
+      <span>Showcase.</span>
     </h2>
 
 
-    <!-- WHY COMPUTER SCIENCE -->
+    <div class="work-tabs reveal">
 
-    <article class="future-direction reveal">
+      <button class="work-tab active" type="button">
+        PROJECTS
+      </button>
 
-      <p class="future-kicker">
-        WHY COMPUTER SCIENCE?
+      <button class="work-tab" type="button">
+        DESIGN
+      </button>
+
+      <button class="work-tab" type="button">
+        MEDIA
+      </button>
+
+    </div>
+
+
+    <div class="work-grid">
+
+      <article class="work-card reveal">
+
+        <span>01 / MOTION</span>
+
+        <div class="work-card-visual">
+          <strong>ANIMATION</strong>
+        </div>
+
+        <h3>
+          Digital Animation
+        </h3>
+
+        <p>
+          Exploring how movement,
+          visuals and storytelling
+          can communicate an idea.
+        </p>
+
+      </article>
+
+
+      <article class="work-card reveal">
+
+        <span>02 / VISUAL</span>
+
+        <div class="work-card-visual">
+          <strong>DESIGN</strong>
+        </div>
+
+        <h3>
+          Graphic Design
+        </h3>
+
+        <p>
+          Turning information and ideas
+          into clear visual experiences.
+        </p>
+
+      </article>
+
+
+      <article class="work-card reveal">
+
+        <span>03 / WEB</span>
+
+        <div class="work-card-visual code-work">
+          <strong>&lt;/&gt;</strong>
+        </div>
+
+        <h3>
+          Web Development
+        </h3>
+
+        <p>
+          Building responsive digital
+          experiences with HTML,
+          CSS and JavaScript.
+        </p>
+
+      </article>
+
+
+      <article class="work-card reveal">
+
+        <span>04 / MEDIA</span>
+
+        <div class="work-card-visual">
+          <strong>● REC</strong>
+        </div>
+
+        <h3>
+          Photography / Video
+        </h3>
+
+        <p>
+          Exploring stories through
+          images, composition and motion.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+     11 / FUTURE
+================================================== -->
+
+<section
+  class="section future-section"
+  id="journey"
+>
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <p class="mono-label">
+        11 / NEXT CHAPTER
       </p>
 
-      <h3>
-        Technology.<br>
-        Creativity.<br>
-        <span>Problem-solving.</span>
-      </h3>
+      <span>
+        // FUTURE
+      </span>
 
-      <p class="future-direction-copy">
-        Turning ideas into real solutions.
-      </p>
-
-    </article>
+    </div>
 
 
-    <!-- DREAM UNIVERSITIES -->
+    <div class="future-hero">
 
-    <div class="future-university-heading reveal">
+      <h2 class="future-title reveal">
+        SOFTWARE<br>
+        <span>ENGINEER.</span>
+      </h2>
 
-      <p>
+      <div class="future-side reveal">
+
+        <span>
+          COMPUTER SCIENCE
+        </span>
+
+        <p>
+          Technology.<br>
+          Creativity.<br>
+          Problem-solving.
+        </p>
+
+        <strong>
+          Turning ideas into
+          real solutions.
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <div class="university-heading reveal">
+
+      <span>
         WHERE I WANT TO STUDY
-      </p>
+      </span>
 
       <h3>
         Two destinations.<br>
-        <span>One direction.</span>
+        <strong>One direction.</strong>
       </h3>
 
     </div>
 
 
-    <div class="future-universities">
+    <div class="university-grid">
 
-      <article class="future-card university-card reveal">
+      <article class="university-card reveal">
 
-        <div class="university-top">
-
-          <label>
-            DREAM UNIVERSITY · US
-          </label>
-
-          <span class="university-arrow">
-            ↗
-          </span>
-
+        <div class="university-card-top">
+          <span>DREAM UNIVERSITY / US</span>
+          <b>↗</b>
         </div>
 
-        <div class="university-logo mit-logo">
+        <div class="university-logo">
 
           <img
             src="mit-logo.png"
@@ -1239,241 +2077,172 @@
 
         </div>
 
-        <div class="university-info">
+        <h3>MIT</h3>
 
-          <h3>MIT</h3>
+        <p>
+          Massachusetts Institute
+          of Technology
+        </p>
 
-          <p>
-            Massachusetts Institute
-            of Technology
-          </p>
-
-          <small>
-            United States
-          </small>
-
-        </div>
+        <small>
+          UNITED STATES
+        </small>
 
       </article>
 
 
-      <article class="future-card university-card reveal">
+      <article class="university-card reveal">
 
-        <div class="university-top">
-
-          <label>
-            DREAM UNIVERSITY · MALAYSIA
-          </label>
-
-          <span class="university-arrow">
-            ↗
-          </span>
-
+        <div class="university-card-top">
+          <span>DREAM UNIVERSITY / MALAYSIA</span>
+          <b>↗</b>
         </div>
 
-        <div class="university-logo utp-logo">
+        <div class="university-logo">
 
           <img
             src="utp-logo.png"
-            alt="Universiti Teknologi PETRONAS logo"
+            alt="UTP logo"
             loading="lazy"
           >
 
         </div>
 
-        <div class="university-info">
+        <h3>UTP</h3>
 
-          <h3>UTP</h3>
+        <p>
+          Universiti Teknologi PETRONAS
+        </p>
 
-          <p>
-            Universiti Teknologi
-            PETRONAS
-          </p>
-
-          <small>
-            Malaysia
-          </small>
-
-        </div>
+        <small>
+          MALAYSIA
+        </small>
 
       </article>
 
     </div>
 
 
-    <!-- PATH -->
+    <div class="career-heading reveal">
 
-    <div class="path-heading reveal">
-
-      <p>
+      <span>
         AFTER SPM
-      </p>
+      </span>
 
       <h3>
         The path<br>
-        <span>ahead.</span>
+        <strong>ahead.</strong>
       </h3>
 
     </div>
 
 
-    <div class="career-path">
+    <div class="career-track">
 
-      <article class="path-step reveal">
+      <article class="career-step reveal">
 
-        <div class="path-marker">
-          01
-        </div>
+        <span>01</span>
 
-        <div class="path-content">
-
-          <span>2027</span>
-
+        <div>
+          <small>2027</small>
           <h4>SPM</h4>
-
           <p>
             Complete my secondary education
             at SM Sains Kuala Terengganu.
           </p>
-
         </div>
 
       </article>
 
 
-      <article class="path-step reveal">
+      <article class="career-step reveal">
 
-        <div class="path-marker">
-          02
-        </div>
+        <span>02</span>
 
-        <div class="path-content">
-
-          <span>NEXT STEP</span>
-
-          <h4>
-            Pre-University
-          </h4>
-
+        <div>
+          <small>NEXT STEP</small>
+          <h4>Pre-University</h4>
           <p>
             Build a strong academic foundation
             before entering university.
           </p>
-
         </div>
 
       </article>
 
 
-      <article class="path-step reveal">
+      <article class="career-step reveal">
 
-        <div class="path-marker">
-          03
-        </div>
+        <span>03</span>
 
-        <div class="path-content">
-
-          <span>FIELD</span>
-
-          <h4>
-            Computer Science
-          </h4>
-
+        <div>
+          <small>FIELD</small>
+          <h4>Computer Science</h4>
           <p>
             Develop deeper knowledge in
             computing, software and technology.
           </p>
-
         </div>
 
       </article>
 
 
-      <article class="path-step reveal">
+      <article class="career-step reveal">
 
-        <div class="path-marker">
-          04
-        </div>
+        <span>04</span>
 
-        <div class="path-content">
-
-          <span>UNIVERSITY</span>
-
-          <h4>
-            Degree
-          </h4>
-
+        <div>
+          <small>UNIVERSITY</small>
+          <h4>Degree</h4>
           <p>
-            Study at university while building
-            projects and expanding my
-            technical skills.
+            Study at university while
+            building projects and expanding
+            my technical skills.
           </p>
-
         </div>
 
       </article>
 
 
-      <article class="path-step reveal">
+      <article class="career-step reveal">
 
-        <div class="path-marker">
-          05
-        </div>
+        <span>05</span>
 
-        <div class="path-content">
-
-          <span>REAL WORLD</span>
-
-          <h4>
-            Industry Experience
-          </h4>
-
+        <div>
+          <small>REAL WORLD</small>
+          <h4>Industry Experience</h4>
           <p>
-            Gain real-world experience
-            through projects, internships
-            and software development.
+            Gain real-world experience through
+            projects, internships and
+            software development.
           </p>
-
         </div>
 
       </article>
 
 
-      <article class="path-step reveal">
+      <article class="career-step reveal">
 
-        <div class="path-marker">
-          06
-        </div>
+        <span>06</span>
 
-        <div class="path-content">
-
-          <span>PROFESSIONAL DEVELOPMENT</span>
-
-          <h4>
-            Keep Growing.
-          </h4>
-
+        <div>
+          <small>PROFESSIONAL DEVELOPMENT</small>
+          <h4>Keep Growing.</h4>
           <p>
             Continue developing technical,
             professional and leadership skills.
           </p>
-
         </div>
 
       </article>
 
 
-      <article class="path-step path-destination reveal">
+      <article class="career-step destination reveal">
 
-        <div class="path-marker">
-          07
-        </div>
+        <span>07</span>
 
-        <div class="path-content">
-
-          <span>
-            THE DESTINATION
-          </span>
+        <div>
+          <small>THE DESTINATION</small>
 
           <h4>
             Software<br>
@@ -1503,21 +2272,29 @@
 </section>
 
 
-<!-- =========================
-     AI & DEVELOPMENT
-========================= -->
+<!-- ==================================================
+     12 / AI JOURNEY
+================================================== -->
 
-<section class="section ai-section" id="ai">
+<section class="section grid-section ai-section" id="ai">
 
   <div class="container">
 
-    <p class="section-number light reveal">
-      08 / AI &amp; DEVELOPMENT
-    </p>
+    <div class="section-head reveal">
 
-    <h2 class="ai-title reveal">
-      Built by me.<br>
-      <span>Powered by AI.</span>
+      <p class="mono-label">
+        12 / AI &amp; DEVELOPMENT
+      </p>
+
+      <span>
+        MY WORKFLOW
+      </span>
+
+    </div>
+
+    <h2 class="mega-title reveal">
+      AI is part of<br>
+      <span>my workflow.</span>
     </h2>
 
     <p class="ai-intro reveal">
@@ -1527,230 +2304,147 @@
       refining the final experience.
     </p>
 
-  </div>
+
+    <div class="ai-grid">
 
 
-  <div class="marquee">
+      <article class="ai-card reveal">
 
-    <div class="marquee-track">
-
-      <span>ChatGPT</span>
-      <span>Codex</span>
-      <span>Claude</span>
-      <span>Gemini</span>
-      <span>Canva</span>
-
-      <span>ChatGPT</span>
-      <span>Codex</span>
-      <span>Claude</span>
-      <span>Gemini</span>
-      <span>Canva</span>
-
-    </div>
-
-  </div>
-
-
-  <div class="container">
-
-    <p class="ai-tools-label reveal">
-      TOOLS BEHIND THIS WEBSITE
-    </p>
-
-
-    <div class="ai-tools-grid">
-
-
-      <!-- CHATGPT -->
-
-      <article class="ai-tool-card reveal">
-
-        <div class="ai-tool-top">
-
-          <small>01</small>
-
-          <span>
-            PLANNING &amp; PROBLEM SOLVING
-          </span>
-
+        <div class="ai-card-top">
+          <span>01</span>
+          <small>PLANNING &amp; PROBLEM SOLVING</small>
         </div>
 
-        <div class="ai-tool-logo">
+        <div class="ai-logo">
+
           <img
             src="chatgpt-logo.jpg"
             alt="ChatGPT logo"
             loading="lazy"
           >
-        </div>
-
-        <div class="ai-tool-content">
-
-          <h3>
-            ChatGPT
-          </h3>
-
-          <p>
-            Helped me plan the website,
-            organise content, improve code
-            and solve development problems.
-          </p>
 
         </div>
+
+        <h3>ChatGPT</h3>
+
+        <p>
+          Helped me plan the website,
+          organise content, improve code
+          and solve development problems.
+        </p>
 
       </article>
 
 
-      <!-- CODEX -->
+      <article class="ai-card reveal">
 
-      <article class="ai-tool-card reveal">
-
-        <div class="ai-tool-top">
-
-          <small>02</small>
-
-          <span>
-            DEVELOPMENT
-          </span>
-
+        <div class="ai-card-top">
+          <span>02</span>
+          <small>DEVELOPMENT</small>
         </div>
 
-        <div class="ai-tool-logo">
+        <div class="ai-logo">
+
           <img
             src="codex-logo.png"
             alt="Codex logo"
             loading="lazy"
           >
-        </div>
-
-        <div class="ai-tool-content">
-
-          <h3>
-            Codex
-          </h3>
-
-          <p>
-            Used as a coding assistant
-            to develop features, improve
-            code and speed up development.
-          </p>
 
         </div>
+
+        <h3>Codex</h3>
+
+        <p>
+          Used as a coding assistant
+          to develop features, improve
+          code and speed up development.
+        </p>
 
       </article>
 
 
-      <!-- CLAUDE -->
+      <article class="ai-card reveal">
 
-      <article class="ai-tool-card reveal">
-
-        <div class="ai-tool-top">
-
-          <small>03</small>
-
-          <span>
-            CODE REVIEW
-          </span>
-
+        <div class="ai-card-top">
+          <span>03</span>
+          <small>CODE REVIEW</small>
         </div>
 
-        <div class="ai-tool-logo">
+        <div class="ai-logo">
+
           <img
             src="claude-logo.webp"
             alt="Claude logo"
             loading="lazy"
           >
-        </div>
-
-        <div class="ai-tool-content">
-
-          <h3>
-            Claude
-          </h3>
-
-          <p>
-            Used to review code,
-            explore alternative solutions
-            and improve implementation.
-          </p>
 
         </div>
+
+        <h3>Claude</h3>
+
+        <p>
+          Used to review code,
+          explore alternative solutions
+          and improve implementation.
+        </p>
 
       </article>
 
 
-      <!-- GEMINI -->
+      <article class="ai-card reveal">
 
-      <article class="ai-tool-card reveal">
-
-        <div class="ai-tool-top">
-
-          <small>04</small>
-
-          <span>
-            RESEARCH &amp; IDEAS
-          </span>
-
+        <div class="ai-card-top">
+          <span>04</span>
+          <small>RESEARCH &amp; IDEAS</small>
         </div>
 
-        <div class="ai-tool-logo">
+        <div class="ai-logo">
+
           <img
             src="gemini-logo.webp"
             alt="Gemini logo"
             loading="lazy"
           >
-        </div>
-
-        <div class="ai-tool-content">
-
-          <h3>
-            Gemini
-          </h3>
-
-          <p>
-            Helped with research,
-            exploring ideas and providing
-            another perspective during development.
-          </p>
 
         </div>
+
+        <h3>Gemini</h3>
+
+        <p>
+          Helped with research,
+          exploring ideas and providing
+          another perspective during development.
+        </p>
 
       </article>
 
 
-      <!-- CANVA -->
+      <article class="ai-card ai-card-wide reveal">
 
-      <article class="ai-tool-card ai-tool-wide reveal">
-
-        <div class="ai-tool-top">
-
-          <small>05</small>
-
-          <span>
-            VISUAL DESIGN
-          </span>
-
+        <div class="ai-card-top">
+          <span>05</span>
+          <small>VISUAL DESIGN</small>
         </div>
 
-        <div class="ai-tool-logo">
+        <div class="ai-logo">
+
           <img
             src="canva-logo.png"
             alt="Canva logo"
             loading="lazy"
           >
+
         </div>
 
-        <div class="ai-tool-content">
-
-          <h3>
-            Canva
-          </h3>
+        <div>
+          <h3>Canva</h3>
 
           <p>
             Used to prepare visual assets
             and support the overall visual
             presentation of this portfolio.
           </p>
-
         </div>
 
       </article>
@@ -1758,38 +2452,33 @@
     </div>
 
 
-    <!-- DEVELOPMENT PROCESS -->
+    <div class="workflow reveal">
 
-    <div class="ai-build reveal">
-
-      <p class="ai-build-label">
+      <span class="workflow-label">
         DEVELOPMENT PROCESS
-      </p>
+      </span>
 
-      <div class="ai-build-flow">
+      <div class="workflow-track">
 
         <span>MY IDEA</span>
         <b>→</b>
-
         <span>AI ASSISTANCE</span>
         <b>→</b>
-
         <span>CODE</span>
         <b>→</b>
-
         <span>TEST</span>
         <b>→</b>
-
         <span>REFINE</span>
         <b>→</b>
-
         <span>WEBSITE</span>
 
       </div>
 
       <h3>
         AI assisted the process.<br>
-        <span>I made the decisions.</span>
+        <strong>
+          I made the decisions.
+        </strong>
       </h3>
 
     </div>
@@ -1799,24 +2488,124 @@
 </section>
 
 
-<!-- =========================
-     RESPONSIBLE AI
-========================= -->
+<!-- ==================================================
+     13 / AI VS ME
+================================================== -->
 
-<section class="section white">
+<section class="section ai-vs-section">
 
   <div class="container">
 
-    <p class="section-number reveal">
-      09 / RESPONSIBLE AI
+    <div class="section-head reveal">
+
+      <p class="mono-label">
+        13 / AI VS ME
+      </p>
+
+      <span>
+        ASSISTANCE ≠ OWNERSHIP
+      </span>
+
+    </div>
+
+    <h2 class="mega-title reveal">
+      AI assisted.<br>
+      <span>I decided.</span>
+    </h2>
+
+
+    <div class="ai-vs-grid">
+
+      <article class="ai-vs-card reveal">
+
+        <div class="ai-vs-top">
+
+          <span>
+            AI / ASSISTANCE
+          </span>
+
+          <strong>01</strong>
+
+        </div>
+
+        <ul>
+          <li>Explore ideas</li>
+          <li>Suggest code</li>
+          <li>Identify problems</li>
+          <li>Compare solutions</li>
+          <li>Improve wording</li>
+          <li>Speed up repetitive work</li>
+        </ul>
+
+      </article>
+
+
+      <article class="ai-vs-card human reveal">
+
+        <div class="ai-vs-top">
+
+          <span>
+            ISMA / DECISIONS
+          </span>
+
+          <strong>02</strong>
+
+        </div>
+
+        <ul>
+          <li>Choose direction</li>
+          <li>Make design decisions</li>
+          <li>Test the website</li>
+          <li>Verify results</li>
+          <li>Debug problems</li>
+          <li>Decide what stays</li>
+        </ul>
+
+      </article>
+
+    </div>
+
+
+    <p class="ai-vs-ending reveal">
+      AI can generate possibilities.
+      <span>
+        I decide what becomes
+        part of my work.
+      </span>
     </p>
 
-    <h2 class="display-title reveal">
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+     14 / RESPONSIBLE AI
+================================================== -->
+
+<section class="section grid-section responsible-section">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <p class="mono-label">
+        14 / RESPONSIBLE AI
+      </p>
+
+      <span>
+        THINK FIRST
+      </span>
+
+    </div>
+
+    <h2 class="mega-title reveal">
       Use AI.<br>
       <span>Keep thinking.</span>
     </h2>
 
-    <div class="responsible-text reveal">
+
+    <div class="responsible-intro reveal">
 
       <p>
         I believe AI should be used
@@ -1834,71 +2623,268 @@
 
     </div>
 
+
+    <div class="principles">
+
+      <article class="reveal">
+
+        <span>01</span>
+
+        <h3>QUESTION</h3>
+
+        <p>
+          Don't accept everything
+          immediately.
+        </p>
+
+      </article>
+
+
+      <article class="reveal">
+
+        <span>02</span>
+
+        <h3>VERIFY</h3>
+
+        <p>
+          Check important
+          information.
+        </p>
+
+      </article>
+
+
+      <article class="reveal">
+
+        <span>03</span>
+
+        <h3>UNDERSTAND</h3>
+
+        <p>
+          Know what the output
+          actually means.
+        </p>
+
+      </article>
+
+
+      <article class="reveal">
+
+        <span>04</span>
+
+        <h3>OWN</h3>
+
+        <p>
+          Take responsibility
+          for the final work.
+        </p>
+
+      </article>
+
+    </div>
+
+
+    <h3 class="principles-ending reveal">
+      Question. Verify.<br>
+      Understand.
+      <span>Own.</span>
+    </h3>
+
   </div>
 
 </section>
 
 
-<!-- =========================
-     REFLECTION
-========================= -->
+<!-- ==================================================
+     15 / REFLECTION
+================================================== -->
 
-<section class="section">
+<section class="reflection-section">
 
   <div class="container">
 
-    <p class="section-number reveal">
-      10 / REFLECTION
-    </p>
+    <div class="section-head reveal">
 
-    <h2 class="reflection-title reveal">
-      AI made things<br>
-      <span>simpler.</span>
-    </h2>
+      <p class="mono-label">
+        15 / REFLECTION
+      </p>
 
-    <blockquote class="reflection-quote reveal">
-      “AI makes my life easier
-      and saves me time.”
-    </blockquote>
+      <span>
+        WHAT AI TAUGHT ME
+      </span>
 
-    <p class="reflection-copy reveal">
-      AI helps me learn faster,
-      explore new ideas and work
-      more efficiently, giving me
-      more time to focus on creativity
-      and problem-solving.
-    </p>
+    </div>
+
+
+    <div class="reflection-story">
+
+      <p class="reveal">
+        Before using AI, I thought its
+        biggest advantage was speed.
+      </p>
+
+      <p class="reveal">
+        While building this portfolio,
+        I realised that the quality of
+        the result still depends on the
+        questions I ask, the choices I make
+        and how carefully I check the answer.
+      </p>
+
+      <p class="reveal">
+        AI helped me explore ideas,
+        solve coding problems and improve
+        my work faster.
+      </p>
+
+    </div>
+
+
+    <div class="reflection-break reveal">
+
+      <span>
+        BUT IT ALSO TAUGHT ME
+        SOMETHING MORE IMPORTANT:
+      </span>
+
+      <h2>
+        USING AI WELL<br>
+        REQUIRES ME<br>
+        TO THINK BETTER,<br>
+        <strong>NOT THINK LESS.</strong>
+      </h2>
+
+    </div>
+
+
+    <div class="reflection-final">
+
+      <p class="reveal">
+        AI helped me build
+        this website.
+      </p>
+
+      <h3 class="reveal">
+        The journey helped<br>
+        <span>me build myself.</span>
+      </h3>
+
+    </div>
 
   </div>
 
 </section>
 
 
-<!-- =========================
-     ENDING
-========================= -->
+<!-- ==================================================
+     16 / VIDEO
+================================================== -->
+
+<section class="section video-section">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <p class="mono-label">
+        16 / MEET ISMA
+      </p>
+
+      <span>
+        00:45 / VIDEO
+      </span>
+
+    </div>
+
+    <h2 class="mega-title reveal">
+      Hi, I'm<br>
+      <span>Isma.</span>
+    </h2>
+
+
+    <div class="video-frame reveal">
+
+      <!--
+        Later, replace this placeholder with:
+
+        <video controls poster="isma-video-cover.jpg">
+          <source src="isma-intro.mp4" type="video/mp4">
+        </video>
+      -->
+
+      <div class="video-placeholder">
+
+        <button
+          class="video-play"
+          type="button"
+          aria-label="Video coming soon"
+        >
+          ▶
+        </button>
+
+        <div>
+          <span>MEET ISMA</span>
+          <h3>HI, I'M ISMA.</h3>
+          <p>INTRO VIDEO / 00:45</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+     17 / ENDING
+================================================== -->
 
 <section class="ending">
 
+  <div class="ending-grid"></div>
+
   <div class="ending-inner">
 
-    <p class="ending-small reveal">
-      ISMA ARIF · 2026
-    </p>
+    <div class="ending-top reveal">
 
-    <h2 class="ending-title reveal">
-      JUST<br>
-      DO<br>
-      <span>IT.</span>
-    </h2>
+      <span>
+        ISMA ARIF
+      </span>
+
+      <span>
+        PORTFOLIO / 2026
+      </span>
+
+    </div>
+
+
+    <div class="ending-center">
+
+      <div class="ending-mark reveal">
+        + × ○
+      </div>
+
+      <h2 class="ending-title reveal">
+        JUST<br>
+        DO <span>IT.</span>
+      </h2>
+
+      <p class="ending-mantra reveal">
+        THINK. BUILD. LEARN. REPEAT.
+      </p>
+
+    </div>
+
 
     <footer class="ending-footer">
 
       <p>
-        Student · Designer · Developer
+        Student · Creator · Developer
       </p>
 
-      <div class="ending-links" aria-label="Contact details">
+      <div class="ending-links">
         <span>Email · smaarhssn@gmail.com</span>
         <span>Instagram · @smaarfhssn</span>
         <span>GitHub · smaarfhssn-ai</span>
@@ -1913,6 +2899,7 @@
   </div>
 
 </section>
+
 
 </main>
 
