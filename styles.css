@@ -5256,3 +5256,1147 @@ a{
   }
 
 }
+
+/* ==========================================================
+   FULL NAVY THEME — 2026
+   Primary   #00284F
+   Secondary #004E9C
+   Tertiary  #0080FF
+   Accent    #EDC61E
+
+   Add after all existing CSS rules.
+   Layout, responsiveness and animations preserved.
+========================================================== */
+
+:root {
+  --bg: #00284F;
+  --white: #FFFFFF;
+  --dark: #00284F;
+  --black: #00172E;
+  --grey: #B7CBE0;
+  --blue: #0080FF;
+  --line: rgba(255,255,255,.16);
+
+  --primary: #00284F;
+  --secondary: #004E9C;
+  --tertiary: #0080FF;
+  --accent: #EDC61E;
+
+  --surface: #00376B;
+  --surface-raised: #004E9C;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B7CBE0;
+  --border-navy: rgba(255,255,255,.14);
+
+  --max: 1240px;
+  --radius: 32px;
+  --ease: cubic-bezier(.16,1,.3,1);
+}
+
+/* ================= GLOBAL ================= */
+
+html {
+  background: var(--primary);
+}
+
+body {
+  background: var(--primary);
+  color: var(--text-primary);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.white,
+.dark {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+
+.section-number,
+.section-number.light {
+  color: var(--accent);
+}
+
+.display-title {
+  color: #FFFFFF;
+}
+
+.display-title span {
+  color: var(--text-secondary);
+}
+
+.scroll-progress {
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(237,198,30,.3);
+}
+
+/* ================= LOADER ================= */
+
+.site-loader {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+
+.loader-content > p {
+  color: var(--accent);
+}
+
+.loader-content h2 span {
+  color: var(--accent);
+}
+
+.loader-bottom span {
+  color: var(--text-secondary);
+}
+
+.loader-bar {
+  background: rgba(255,255,255,.15);
+}
+
+.loader-bar span {
+  background: var(--accent);
+}
+
+/* ================= NAVIGATION ================= */
+
+.nav {
+  color: #FFFFFF;
+}
+
+.nav.scrolled {
+  background: rgba(0,40,79,.9);
+  border-bottom: 1px solid var(--border-navy);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+}
+
+.brand {
+  color: #FFFFFF;
+}
+
+.desktop-nav a {
+  color: #D5E5F5;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+  color: var(--accent);
+}
+
+.desktop-nav a::after {
+  background: var(--accent);
+}
+
+.menu-button span {
+  background: #FFFFFF;
+}
+
+.mobile-nav {
+  background: rgba(0,40,79,.98);
+}
+
+.mobile-nav a {
+  color: #FFFFFF;
+  border-bottom-color: var(--border-navy);
+}
+
+.mobile-nav a:hover,
+.mobile-nav a.active {
+  color: var(--accent);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  background: var(--primary);
+}
+
+.hero-glow {
+  background: rgba(0,128,255,.20);
+}
+
+.eyebrow {
+  color: var(--accent);
+}
+
+.hero-name {
+  color: #FFFFFF;
+}
+
+.hero-name span {
+  color: var(--accent);
+}
+
+.hero-tagline {
+  color: #FFFFFF;
+}
+
+.hero-role {
+  color: var(--text-secondary);
+}
+
+.hero-role b {
+  color: var(--accent);
+}
+
+.explore {
+  color: var(--accent);
+}
+
+.explore:hover {
+  color: #FFFFFF;
+}
+
+.hero-side {
+  color: #91B4D6;
+}
+
+/* ================= ABOUT ================= */
+
+.about-layout {
+  color: #FFFFFF;
+}
+
+.school-visual {
+  background: var(--surface);
+  box-shadow: 0 30px 80px rgba(0,10,30,.25);
+}
+
+.school-visual figcaption span {
+  color: var(--accent);
+}
+
+.school-visual figcaption p {
+  color: #FFFFFF;
+}
+
+.large-copy {
+  color: #FFFFFF;
+}
+
+.large-copy span {
+  color: var(--accent);
+}
+
+/* ================= EDUCATION ================= */
+
+.timeline {
+  border-top-color: var(--border-navy);
+}
+
+.timeline-row {
+  border-bottom-color: var(--border-navy);
+}
+
+.timeline-row > span {
+  color: var(--accent);
+}
+
+.timeline-row h3 {
+  color: #FFFFFF;
+}
+
+.timeline-row p {
+  color: var(--text-secondary);
+}
+
+.statement {
+  background: var(--secondary);
+  color: #FFFFFF;
+  border: 1px solid var(--border-navy);
+}
+
+.statement::after {
+  background: rgba(0,128,255,.25);
+}
+
+.statement small {
+  color: #D5E5F5;
+}
+
+.statement span {
+  color: var(--accent);
+}
+
+/* ================= SKILLS ================= */
+
+.skill-card {
+  background: var(--surface);
+  color: #FFFFFF;
+  border: 1px solid var(--border-navy);
+}
+
+.skill-card:hover {
+  box-shadow: 0 28px 75px rgba(0,10,30,.3);
+}
+
+.skill-dark {
+  background: var(--secondary);
+  color: #FFFFFF;
+}
+
+.skill-card > small {
+  color: #AFC7E0;
+}
+
+.skill-card label {
+  color: var(--accent);
+}
+
+.skill-card h3 {
+  color: #FFFFFF;
+}
+
+.skill-card p {
+  color: #C1D5E9;
+}
+
+/* CODE */
+
+.skill-code::before {
+  background: rgba(0,128,255,.24);
+}
+
+.code-window {
+  background: rgba(0,25,55,.65);
+  border-color: rgba(255,255,255,.2);
+  box-shadow: 0 35px 80px rgba(0,10,30,.4);
+}
+
+.code-window-top {
+  border-bottom-color: rgba(255,255,255,.12);
+}
+
+.code-window-top > span {
+  color: #AFC7E0;
+}
+
+.code-dots i {
+  background: #6486A9;
+}
+
+.code-line {
+  color: #E4F1FF;
+}
+
+.code-number {
+  color: #8BAACB;
+}
+
+.code-line b {
+  color: var(--accent);
+}
+
+.code-line em {
+  color: #75BBFF;
+}
+
+.code-muted > span:last-child {
+  color: #A4BCD4;
+}
+
+.code-symbol {
+  background: rgba(0,78,156,.5);
+  border-color: rgba(255,255,255,.16);
+  color: #B7D7F6;
+}
+
+.code-symbol-one {
+  color: var(--accent);
+}
+
+/* CREATE */
+
+.skill-create::before {
+  background: rgba(0,128,255,.2);
+}
+
+.design-canvas {
+  background: #EAF4FF;
+  border-color: rgba(0,40,79,.15);
+}
+
+.design-toolbar {
+  border-bottom-color: #B9D5F1;
+}
+
+.design-toolbar span {
+  background: #91B8DF;
+}
+
+.design-object {
+  border-color: var(--tertiary);
+}
+
+.design-shape {
+  background: linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--tertiary)
+  );
+}
+
+.node {
+  border-color: var(--tertiary);
+  background: #FFFFFF;
+}
+
+.design-line {
+  background: #9CC3E8;
+}
+
+.design-layer {
+  background: #6AABEA;
+  border-color: rgba(255,255,255,.2);
+}
+
+.layer-two {
+  background: #B8DBFF;
+}
+
+.design-cursor {
+  background: var(--accent);
+  color: var(--primary);
+  box-shadow: 0 12px 30px rgba(237,198,30,.25);
+}
+
+/* EXPLORE */
+
+.orbit {
+  border-color: rgba(0,128,255,.5);
+}
+
+.orbit-core {
+  background: var(--accent);
+  color: var(--primary);
+  box-shadow: 0 15px 35px rgba(237,198,30,.2);
+}
+
+.orbit-node {
+  background: var(--secondary);
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,.15);
+  box-shadow: 0 8px 25px rgba(0,10,30,.2);
+}
+
+.orbit-dot {
+  background: var(--accent);
+}
+
+/* BEYOND TECH */
+
+.play-field {
+  background: linear-gradient(
+    135deg,
+    #004079,
+    #00284F
+  );
+  border-color: rgba(255,255,255,.15);
+}
+
+.field-line,
+.field-circle {
+  border-color: rgba(255,255,255,.2);
+}
+
+.field-line {
+  background: rgba(255,255,255,.2);
+}
+
+.player-node {
+  background: var(--secondary);
+  color: #FFFFFF;
+  box-shadow: 0 10px 30px rgba(0,10,30,.25);
+}
+
+.lead-node {
+  background: var(--accent);
+  color: var(--primary);
+  box-shadow: 0 18px 40px rgba(237,198,30,.2);
+}
+
+.movement-path path {
+  stroke: rgba(237,198,30,.7);
+}
+
+.football {
+  background: #FFFFFF;
+  border-color: var(--primary);
+}
+
+.football::before,
+.football::after,
+.football span {
+  background: var(--primary);
+}
+
+/* ================= LEADERSHIP ================= */
+
+.leadership-intro {
+  color: var(--text-secondary);
+}
+
+.leadership-title {
+  color: #FFFFFF;
+}
+
+.leadership-subtitle {
+  color: var(--accent);
+}
+
+.photo-card {
+  background: var(--surface);
+}
+
+.photo-card figcaption span {
+  color: var(--accent);
+}
+
+.photo-card figcaption p {
+  color: #E1EDFA;
+}
+
+/* ================= ACHIEVEMENTS ================= */
+
+.year-heading {
+  border-bottom-color: var(--border-navy);
+  color: var(--accent);
+}
+
+.award-feature {
+  border-bottom-color: var(--border-navy);
+}
+
+.award-image,
+.android-award-image,
+.achievement-visual-image,
+.discont-gallery figure {
+  background: var(--surface);
+}
+
+.award-copy label,
+.android-award label,
+.achievement-visual-copy label,
+.discont-heading label {
+  color: var(--accent);
+}
+
+.award-copy h3,
+.android-award-copy h3,
+.discont-heading h3 {
+  color: #FFFFFF;
+}
+
+.award-copy p,
+.android-award-copy p,
+.discont-meta p {
+  color: var(--text-secondary);
+}
+
+.award-copy strong {
+  color: var(--accent);
+}
+
+/* DISCONT */
+
+.discont-showcase {
+  border-bottom-color: var(--border-navy);
+}
+
+.discont-meta span {
+  color: #AFC7E0;
+}
+
+.discont-award figcaption span {
+  color: var(--accent);
+}
+
+/* ANDROID */
+
+.android-award {
+  border-bottom-color: var(--border-navy);
+}
+
+/* ACHIEVEMENT VISUAL */
+
+.achievement-visual-copy {
+  background: var(--surface);
+  border: 1px solid var(--border-navy);
+  box-shadow: 0 18px 50px rgba(0,10,30,.15);
+}
+
+.achievement-visual-copy::before {
+  background: rgba(0,128,255,.2);
+}
+
+.achievement-index {
+  color: #AFC7E0;
+}
+
+.achievement-visual-copy h3 {
+  color: #FFFFFF;
+}
+
+.achievement-visual-copy p {
+  color: var(--text-secondary);
+}
+
+/* ================= PROJECT ================= */
+
+.project-section {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+
+.project-glow-one {
+  background: rgba(0,128,255,.22);
+}
+
+.project-glow-two {
+  background: rgba(0,78,156,.3);
+}
+
+.project-title {
+  color: #FFFFFF;
+}
+
+.project-heading-copy span {
+  color: var(--accent);
+}
+
+.project-heading-copy p {
+  color: var(--text-secondary);
+}
+
+.project-tagline {
+  color: #8FAFCF;
+}
+
+.project-tagline span {
+  color: #FFFFFF;
+}
+
+.retrace-logo-wrap {
+  background: #FFFFFF;
+  box-shadow: 0 30px 100px rgba(0,128,255,.2);
+}
+
+/* PHONES */
+
+.phone {
+  background: #00172E;
+  border-color: rgba(255,255,255,.22);
+  box-shadow: 0 60px 120px rgba(0,10,30,.55);
+}
+
+.phone-top {
+  background: #001020;
+}
+
+.phone-top span {
+  background: #203B59;
+}
+
+/* PROJECT FEATURES */
+
+.project-features {
+  background: var(--secondary);
+  border-color: var(--border-navy);
+}
+
+.project-feature {
+  background: var(--surface);
+}
+
+.project-feature small {
+  color: #AFC7E0;
+}
+
+.project-feature span {
+  color: var(--accent);
+}
+
+.project-feature h4 {
+  color: #FFFFFF;
+}
+
+.project-feature p {
+  color: var(--text-secondary);
+}
+
+/* ADMIN */
+
+.mini-label {
+  color: var(--accent);
+}
+
+.admin-copy h3 {
+  color: #FFFFFF;
+}
+
+.admin-copy h3 span {
+  color: #9AB9D8;
+}
+
+.admin-description {
+  color: var(--text-secondary);
+}
+
+.admin-device {
+  background: var(--surface);
+  border-color: var(--border-navy);
+  box-shadow: 0 50px 100px rgba(0,10,30,.4);
+}
+
+.admin-device-bar {
+  border-bottom-color: var(--border-navy);
+}
+
+.admin-device-bar span {
+  background: #6593C0;
+}
+
+.admin-device-bar p {
+  color: #AFC7E0;
+}
+
+/* NATIONAL */
+
+.national-stage {
+  border-top-color: var(--border-navy);
+}
+
+.national-year {
+  color: var(--secondary);
+}
+
+.national-copy span {
+  color: var(--accent);
+}
+
+.national-copy h3 {
+  color: #FFFFFF;
+}
+
+.national-copy p {
+  color: var(--text-secondary);
+}
+
+/* ================= FUTURE ================= */
+
+.future-section {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+
+.future-direction {
+  background: var(--secondary);
+  color: #FFFFFF;
+  border: 1px solid var(--border-navy);
+}
+
+.future-direction::after {
+  background: rgba(0,128,255,.3);
+}
+
+.future-kicker {
+  color: var(--accent);
+}
+
+.future-direction h3 span {
+  color: var(--accent);
+}
+
+.future-direction-copy {
+  color: #D1E4F7;
+}
+
+/* UNIVERSITIES */
+
+.future-university-heading,
+.path-heading {
+  border-top-color: var(--border-navy);
+}
+
+.future-university-heading > p,
+.path-heading > p {
+  color: var(--accent);
+}
+
+.future-university-heading h3,
+.path-heading h3 {
+  color: #FFFFFF;
+}
+
+.future-university-heading h3 span,
+.path-heading h3 span {
+  color: var(--text-secondary);
+}
+
+.future-card {
+  background: var(--surface);
+  border-color: var(--border-navy);
+}
+
+.future-card:hover {
+  box-shadow: 0 35px 90px rgba(0,10,30,.3);
+}
+
+.future-card label {
+  color: var(--accent);
+}
+
+.university-card::after {
+  background: rgba(0,128,255,.2);
+}
+
+.university-arrow {
+  background: var(--secondary);
+  color: #FFFFFF;
+}
+
+.university-info h3 {
+  color: #FFFFFF;
+}
+
+.university-info p {
+  color: #D0E1F2;
+}
+
+.university-info small {
+  color: #9CBBDD;
+}
+
+/* CAREER PATH */
+
+.career-path::before {
+  background: repeating-linear-gradient(
+    to bottom,
+    #5C91C4 0,
+    #5C91C4 6px,
+    transparent 6px,
+    transparent 13px
+  );
+}
+
+.path-marker {
+  background: var(--primary);
+  color: #D4E6F8;
+  border-color: #5487B8;
+}
+
+.path-step:hover .path-marker {
+  background: var(--accent);
+  color: var(--primary);
+  border-color: var(--accent);
+}
+
+.path-content {
+  border-bottom-color: var(--border-navy);
+}
+
+.path-content > span {
+  color: var(--accent);
+}
+
+.path-content h4 {
+  color: #FFFFFF;
+}
+
+.path-content p {
+  color: var(--text-secondary);
+}
+
+.path-destination .path-marker {
+  background: var(--accent);
+  color: var(--primary);
+  border-color: var(--accent);
+  box-shadow: 0 15px 40px rgba(237,198,30,.2);
+}
+
+.path-destination .path-content {
+  background: var(--secondary);
+  color: #FFFFFF;
+}
+
+.path-destination .path-content::after {
+  background: rgba(0,128,255,.3);
+}
+
+.path-destination .path-content p {
+  color: #D0E1F2;
+}
+
+.future-quote {
+  color: #FFFFFF;
+}
+
+.future-quote span {
+  color: var(--accent);
+}
+
+/* ================= AI & DEVELOPMENT ================= */
+
+.ai-section {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+
+.ai-title span {
+  color: var(--accent);
+}
+
+.ai-intro {
+  color: var(--text-secondary);
+}
+
+/* MARQUEE */
+
+.marquee {
+  border-top-color: var(--border-navy);
+  border-bottom-color: var(--border-navy);
+}
+
+.marquee-track span {
+  color: #D0E1F2;
+}
+
+/* TOOL GRID */
+
+.ai-tools-label {
+  color: var(--accent);
+}
+
+.ai-tool-card {
+  background: var(--surface);
+  border-color: var(--border-navy);
+}
+
+.ai-tool-card::after {
+  background: rgba(0,128,255,.18);
+}
+
+.ai-tool-card:hover {
+  background: var(--secondary);
+  border-color: rgba(237,198,30,.35);
+}
+
+.ai-tool-card:hover::after {
+  background: rgba(0,128,255,.28);
+}
+
+.ai-tool-top small {
+  color: #B2CAE2;
+}
+
+.ai-tool-top span {
+  color: var(--accent);
+}
+
+.ai-tool-logo {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.16);
+}
+
+.ai-tool-card:hover .ai-tool-logo {
+  background: rgba(255,255,255,.12);
+  border-color: rgba(237,198,30,.4);
+}
+
+.ai-tool-content h3 {
+  color: #FFFFFF;
+}
+
+.ai-tool-content p {
+  color: #C2D6E9;
+}
+
+/* DEVELOPMENT PROCESS */
+
+.ai-build {
+  background: var(--surface);
+  border-color: var(--border-navy);
+}
+
+.ai-build::after {
+  background: rgba(0,128,255,.25);
+}
+
+.ai-build-label {
+  color: var(--accent);
+}
+
+.ai-build-flow span {
+  border-color: rgba(255,255,255,.2);
+  color: #D2E4F5;
+}
+
+.ai-build-flow span:hover {
+  background: rgba(237,198,30,.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.ai-build-flow b {
+  color: #8FB2D3;
+}
+
+.ai-build h3 {
+  color: #FFFFFF;
+}
+
+.ai-build h3 span {
+  color: #B1CAE2;
+}
+
+/* ================= RESPONSIBLE AI ================= */
+
+.responsible-text {
+  color: #FFFFFF;
+}
+
+.responsible-text p + p {
+  color: var(--text-secondary);
+}
+
+/* ================= REFLECTION ================= */
+
+.reflection-title {
+  color: #FFFFFF;
+}
+
+.reflection-title span {
+  color: var(--accent);
+}
+
+.reflection-quote {
+  color: #FFFFFF;
+}
+
+.reflection-copy {
+  color: var(--text-secondary);
+}
+
+/* ================= ENDING ================= */
+
+.ending {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+
+.ending-small {
+  color: var(--accent);
+}
+
+.ending-title {
+  color: #FFFFFF;
+}
+
+.ending-title span {
+  color: var(--accent);
+}
+
+.ending-footer {
+  color: var(--text-secondary);
+  border-top-color: var(--border-navy);
+}
+
+.ending-links span {
+  color: #FFFFFF;
+}
+
+/* ================= MOBILE OVERRIDES ================= */
+
+@media (max-width:650px) {
+
+  .mobile-nav {
+    background: rgba(0,40,79,.98);
+  }
+
+  .mobile-nav a {
+    border-bottom-color: var(--border-navy);
+  }
+
+  .skill-beyond > small {
+    color: #B7CBE0;
+  }
+
+  .skill-beyond .skill-content label {
+    color: var(--accent);
+  }
+
+  .skill-beyond .skill-content p {
+    color: var(--text-secondary);
+  }
+
+  .play-field {
+    background: linear-gradient(
+      135deg,
+      #004079,
+      #00284F
+    );
+    border-color: var(--border-navy);
+  }
+
+  .field-line {
+    background: rgba(255,255,255,.2);
+  }
+
+  .field-circle {
+    border-color: rgba(255,255,255,.2);
+  }
+
+  .phone-main,
+  .phone-left,
+  .phone-right {
+    border-color: rgba(255,255,255,.2);
+  }
+
+}
+
+/* ================= ANIMATION COLOURS ================= */
+
+/* Preserve the original movement and timings.
+   Only the animated glow colours change. */
+
+@keyframes leadPulse {
+  0%,100% {
+    box-shadow:
+      0 18px 40px rgba(237,198,30,.25);
+  }
+
+  50% {
+    box-shadow:
+      0 18px 50px rgba(237,198,30,.45),
+      0 0 0 12px rgba(237,198,30,.08);
+  }
+}
+
+/* ================= ACCESSIBILITY ================= */
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
