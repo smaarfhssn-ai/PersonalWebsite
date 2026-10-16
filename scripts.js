@@ -1,1441 +1,727 @@
 
-/* ==========================================================
-   ISMA ARIF — PERSONAL PORTFOLIO
-   DARK SLEEK EDITORIAL — VERSION 1
+document.addEventListener('DOMContentLoaded', function(){
 
-   Full JavaScript
-   Vanilla JS / GitHub Pages Compatible
+  /* =========================
+     ELEMENTS
+  ========================= */
 
-   Features:
-   01. Initialization
-   02. Mobile Navigation
-   03. Smooth Scrolling
-   04. Active Navigation
-   05. Scroll Progress
-   06. Scroll Reveal
-   07. Hero Entrance
-   08. Image Handling
-   09. Interactive Details
-   10. Accessibility
-   ========================================================== */
+  const loader =
+    document.getElementById('siteLoader');
 
-"use strict";
+  const loaderBar =
+    document.getElementById('loaderBar');
 
-(() => {
+  const loaderPercent =
+    document.getElementById('loaderPercent');
 
-  /* ========================================================
-     01 — CONFIGURATION
-     ======================================================== */
+  const nav =
+    document.getElementById('nav');
 
-  const CONFIG = {
-    navigationOffset: 100,
-    scrollThrottle: 16,
-    revealThreshold: 0.12,
-    revealRootMargin: "0px 0px -45px 0px",
-    heroDelay: 120,
-    mobileBreakpoint: 900
-  };
+  const menuButton =
+    document.getElementById('menuButton');
 
-  const SELECTORS = {
-    body: "body",
-    header: ".topbar",
-    desktopNav: ".desktop-nav",
-    mobileNav: ".mobile-nav",
-    menuButton: ".menu-button",
-    progress: ".progress",
-    reveal: ".reveal",
-    hero: ".hero",
-    heroName: ".hero-name",
-    heroVisual: ".hero-visual",
-    sections: "section[id]",
-    ticker: ".ticker-track"
-  };
+  const mobileNav =
+    document.getElementById('mobileNav');
 
-  const state = {
-    menuOpen: false,
-    scrolling: false,
-    initialized: false,
-    reducedMotion: false,
-    revealObserver: null,
-    sectionObserver: null,
-    lastFocusedElement: null
-  };
+  const progress =
+    document.getElementById('scrollProgress');
 
-  /* ========================================================
-     02 — UTILITIES
-     ======================================================== */
 
-  const $ = (selector, parent = document) => {
-    return parent.querySelector(selector);
-  };
+  /* =========================
+     LOADER
+  ========================= */
 
-  const $$ = (selector, parent = document) => {
-    return Array.from(
-      parent.querySelectorAll(selector)
-    );
-  };
+  document.body.classList.add('loading');
 
-  const clamp = (value, min, max) => {
-    return Math.min(
-      Math.max(value, min),
-      max
-    );
-  };
+  let loadingProgress = 0;
 
-  const prefersReducedMotion = () => {
-    return window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-  };
+  const loadingTimer = setInterval(function(){
 
-  const isMobile = () => {
-    return window.innerWidth <=
-      CONFIG.mobileBreakpoint;
-  };
+    loadingProgress +=
+      Math.floor(Math.random() * 12) + 4;
 
-  const getHeaderOffset = () => {
-    const header = $(SELECTORS.header);
-
-    if (!header) {
-      return CONFIG.navigationOffset;
+    if(loadingProgress > 95){
+      loadingProgress = 95;
     }
 
-    return Math.max(
-      header.getBoundingClientRect().height + 35,
-      CONFIG.navigationOffset
-    );
-  };
-
-  const requestTick = callback => {
-    window.requestAnimationFrame(callback);
-  };
-
-  /* ========================================================
-     03 — INITIALIZATION
-     ======================================================== */
-
-  function initialize() {
-
-    if (state.initialized) {
-      return;
+    if(loaderBar){
+      loaderBar.style.width =
+        loadingProgress + '%';
     }
 
-    state.initialized = true;
+    if(loaderPercent){
+      loaderPercent.textContent =
+        loadingProgress + '%';
+    }
 
-    state.reducedMotion =
-      prefersReducedMotion();
+  },100);
 
-    document.documentElement.classList.add(
-      "js-enabled"
-    );
 
-    initializeNavigation();
+  function finishLoader(){
 
-    initializeSmoothScroll();
+    clearInterval(loadingTimer);
 
-    initializeActiveNavigation();
+    if(loaderBar){
+      loaderBar.style.width = '100%';
+    }
 
-    initializeScrollProgress();
+    if(loaderPercent){
+      loaderPercent.textContent = '100%';
+    }
 
-    initializeRevealAnimations();
+    setTimeout(function(){
 
-    initializeHeroEntrance();
+      if(loader){
+        loader.classList.add('finished');
+      }
 
-    initializeImages();
+      document.body.classList.remove('loading');
 
-    initializeInteractiveDetails();
-
-    initializeAccessibility();
-
-    updateScrollProgress();
-
-    updateActiveNavigation();
-
-    window.addEventListener(
-      "load",
-      () => {
-        updateScrollProgress();
-        updateActiveNavigation();
-      },
-      { once: true }
-    );
+    },350);
 
   }
 
-  /* ========================================================
-     04 — MOBILE NAVIGATION
-     ======================================================== */
 
-  function initializeNavigation() {
-
-    const menuButton = $(
-      SELECTORS.menuButton
-    );
-
-    const mobileNav = $(
-      SELECTORS.mobileNav
-    );
-
-    if (!menuButton || !mobileNav) {
-      return;
-    }
-
-    if (!mobileNav.id) {
-      mobileNav.id = "mobile-navigation";
-    }
-
-    menuButton.setAttribute(
-      "aria-controls",
-      mobileNav.id
-    );
-
-    menuButton.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
-    menuButton.setAttribute(
-      "aria-label",
-      "Open navigation menu"
-    );
-
-    mobileNav.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-    if ("inert" in mobileNav) {
-      mobileNav.inert = true;
-    }
-
-    function openMenu() {
-
-      if (state.menuOpen) {
-        return;
-      }
-
-      state.menuOpen = true;
-
-      state.lastFocusedElement =
-        document.activeElement;
-
-      document.body.classList.add(
-        "menu-open"
-      );
-
-      mobileNav.classList.add(
-        "open"
-      );
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        "true"
-      );
-
-      menuButton.setAttribute(
-        "aria-label",
-        "Close navigation menu"
-      );
-
-      mobileNav.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-      if ("inert" in mobileNav) {
-        mobileNav.inert = false;
-      }
-
-      const firstLink = $(
-        "a",
-        mobileNav
-      );
-
-      if (firstLink) {
-        firstLink.focus({
-          preventScroll: true
-        });
-      }
-
-    }
-
-    function closeMenu(
-      restoreFocus = true
-    ) {
-
-      if (!state.menuOpen) {
-        return;
-      }
-
-      state.menuOpen = false;
-
-      document.body.classList.remove(
-        "menu-open"
-      );
-
-      mobileNav.classList.remove(
-        "open"
-      );
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-      menuButton.setAttribute(
-        "aria-label",
-        "Open navigation menu"
-      );
-
-      if (
-        restoreFocus &&
-        state.lastFocusedElement &&
-        typeof state.lastFocusedElement.focus ===
-          "function"
-      ) {
-
-        state.lastFocusedElement.focus({
-          preventScroll: true
-        });
-
-      }
-
-      mobileNav.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-      if ("inert" in mobileNav) {
-        mobileNav.inert = true;
-      }
-
-    }
-
-    menuButton.addEventListener(
-      "click",
-      () => {
-
-        if (state.menuOpen) {
-          closeMenu();
-        } else {
-          openMenu();
-        }
-
-      }
-    );
-
-    $$("a", mobileNav).forEach(
-      link => {
-
-        link.addEventListener(
-          "click",
-          () => {
-            closeMenu(false);
-          }
-        );
-
-      }
-    );
-
-    document.addEventListener(
-      "keydown",
-      event => {
-
-        if (!state.menuOpen) {
-          return;
-        }
-
-        if (event.key === "Escape") {
-
-          event.preventDefault();
-
-          closeMenu();
-
-          return;
-        }
-
-        if (event.key !== "Tab") {
-          return;
-        }
-
-        const focusable = [
-          menuButton,
-          ...$$(
-            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
-            mobileNav
-          )
-        ].filter(
-          element =>
-            element.getClientRects().length > 0
-        );
-
-        if (!focusable.length) {
-          return;
-        }
-
-        const first = focusable[0];
-
-        const last = focusable[
-          focusable.length - 1
-        ];
-
-        if (
-          event.shiftKey &&
-          document.activeElement === first
-        ) {
-
-          event.preventDefault();
-
-          last.focus();
-
-        } else if (
-          !event.shiftKey &&
-          document.activeElement === last
-        ) {
-
-          event.preventDefault();
-
-          first.focus();
-
-        }
-
-      }
-    );
-
-    document.addEventListener(
-      "click",
-      event => {
-
-        if (!state.menuOpen) {
-          return;
-        }
-
-        if (
-          !mobileNav.contains(event.target) &&
-          !menuButton.contains(event.target)
-        ) {
-
-          closeMenu(false);
-
-        }
-
-      }
-    );
-
+  /*
+   * GitHub Pages may load very fast
+   * from browser cache.
+   */
+
+  if(document.readyState === 'complete'){
+    finishLoader();
+  }else{
     window.addEventListener(
-      "resize",
-      () => {
-
-        if (!isMobile()) {
-          closeMenu(false);
-        }
-
-      },
-      { passive: true }
+      'load',
+      finishLoader,
+      {once:true}
     );
-
   }
 
-  /* ========================================================
-     05 — SMOOTH SCROLLING
-     ======================================================== */
 
-  function initializeSmoothScroll() {
+  /*
+   * Safety fallback:
+   * loader will never trap the page.
+   */
 
-    const anchorLinks = $$(
-      'a[href^="#"]'
-    );
+  setTimeout(function(){
 
-    anchorLinks.forEach(link => {
+    if(
+      loader &&
+      !loader.classList.contains('finished')
+    ){
+      finishLoader();
+    }
 
-      link.addEventListener(
-        "click",
-        event => {
+  },3500);
 
-          const href = link.getAttribute(
-            "href"
-          );
 
-          if (
-            !href ||
-            href === "#"
-          ) {
-            return;
-          }
 
-          const targetId =
-            decodeURIComponent(
-              href.substring(1)
-            );
+  /* =========================
+     NAV + PROGRESS
+  ========================= */
 
-          const target =
-            document.getElementById(
-              targetId
-            );
+  let previousScroll = 0;
 
-          if (!target) {
-            return;
-          }
+  function updateScroll(){
 
-          event.preventDefault();
+    const current =
+      window.scrollY ||
+      window.pageYOffset;
 
-          scrollToElement(target);
+    if(nav){
 
-          if (
-            window.location.hash !== href
-          ) {
-
-            history.pushState(
-              null,
-              "",
-              href
-            );
-
-          }
-
-        }
+      nav.classList.toggle(
+        'scrolled',
+        current > 20
       );
 
-    });
+      if(
+        current > previousScroll &&
+        current > 350 &&
+        mobileNav &&
+        !mobileNav.classList.contains('open')
+      ){
 
-    window.addEventListener(
-      "hashchange",
-      () => {
+        nav.classList.add('nav-hidden');
 
-        const id =
-          decodeURIComponent(
-            window.location.hash.slice(1)
-          );
+      }else{
 
-        if (!id) {
-          return;
-        }
-
-        const target =
-          document.getElementById(id);
-
-        if (target) {
-          scrollToElement(target);
-        }
-
-      }
-    );
-
-    if (window.location.hash) {
-
-      window.addEventListener(
-        "load",
-        () => {
-
-          const id =
-            decodeURIComponent(
-              window.location.hash.slice(1)
-            );
-
-          const target =
-            document.getElementById(id);
-
-          if (target) {
-
-            requestTick(() => {
-              scrollToElement(target);
-            });
-
-          }
-
-        },
-        { once: true }
-      );
-
-    }
-
-  }
-
-  function scrollToElement(element) {
-
-    const offset =
-      getHeaderOffset();
-
-    const position =
-      element.getBoundingClientRect().top +
-      window.scrollY -
-      offset;
-
-    window.scrollTo({
-      top: Math.max(0, position),
-      behavior: state.reducedMotion
-        ? "auto"
-        : "smooth"
-    });
-
-  }
-
-  /* ========================================================
-     06 — ACTIVE NAVIGATION
-     ======================================================== */
-
-  function initializeActiveNavigation() {
-
-    const sections = $$(
-      SELECTORS.sections
-    );
-
-    if (!sections.length) {
-      return;
-    }
-
-    let scheduled = false;
-
-    const onScroll = () => {
-
-      if (scheduled) {
-        return;
-      }
-
-      scheduled = true;
-
-      requestTick(() => {
-
-        updateActiveNavigation();
-
-        scheduled = false;
-
-      });
-
-    };
-
-    window.addEventListener(
-      "scroll",
-      onScroll,
-      { passive: true }
-    );
-
-    window.addEventListener(
-      "resize",
-      onScroll,
-      { passive: true }
-    );
-
-  }
-
-  function updateActiveNavigation() {
-
-    const sections = $$(
-      SELECTORS.sections
-    );
-
-    if (!sections.length) {
-      return;
-    }
-
-    const referencePosition =
-      window.scrollY +
-      getHeaderOffset() +
-      100;
-
-    let activeSection = null;
-
-    sections.forEach(section => {
-
-      if (
-        section.offsetTop <=
-        referencePosition
-      ) {
-
-        activeSection = section;
+        nav.classList.remove('nav-hidden');
 
       }
 
-    });
-
-    if (!activeSection) {
-      activeSection = sections[0];
     }
 
-    const activeId =
-      activeSection.id;
 
-    const navLinks = $$(
-      '.desktop-nav a[href^="#"], .mobile-nav a[href^="#"]'
-    );
+    previousScroll =
+      Math.max(current,0);
 
-    navLinks.forEach(link => {
 
-      const href =
-        link.getAttribute("href");
-
-      const isActive =
-        href === `#${activeId}`;
-
-      link.classList.toggle(
-        "active",
-        isActive
-      );
-
-      if (isActive) {
-
-        link.setAttribute(
-          "aria-current",
-          "location"
-        );
-
-      } else {
-
-        link.removeAttribute(
-          "aria-current"
-        );
-
-      }
-
-    });
-
-  }
-
-  /* ========================================================
-     07 — SCROLL PROGRESS INDICATOR
-     ======================================================== */
-
-  function initializeScrollProgress() {
-
-    const progress = $(
-      SELECTORS.progress
-    );
-
-    if (!progress) {
-      return;
-    }
-
-    let ticking = false;
-
-    const onScroll = () => {
-
-      if (ticking) {
-        return;
-      }
-
-      ticking = true;
-
-      requestTick(() => {
-
-        updateScrollProgress();
-
-        ticking = false;
-
-      });
-
-    };
-
-    window.addEventListener(
-      "scroll",
-      onScroll,
-      { passive: true }
-    );
-
-    window.addEventListener(
-      "resize",
-      onScroll,
-      { passive: true }
-    );
-
-  }
-
-  function updateScrollProgress() {
-
-    const progress = $(
-      SELECTORS.progress
-    );
-
-    if (!progress) {
-      return;
-    }
-
-    const scrollableHeight =
+    const maxScroll =
       document.documentElement.scrollHeight -
       window.innerHeight;
 
-    const scrollPercentage =
-      scrollableHeight > 0
-        ? (window.scrollY /
-           scrollableHeight) * 100
-        : 100;
+    const percentage =
+      maxScroll > 0
+        ? current / maxScroll * 100
+        : 0;
 
-    progress.style.width =
-      `${clamp(
-        scrollPercentage,
-        0,
-        100
-      )}%`;
+    if(progress){
+      progress.style.width =
+        percentage + '%';
+    }
 
   }
 
-  /* ========================================================
-     08 — SCROLL REVEAL ANIMATIONS
-     ======================================================== */
+  updateScroll();
 
-  function initializeRevealAnimations() {
 
-    const elements = $$(
-      SELECTORS.reveal
+  /* =========================
+     MOBILE MENU
+  ========================= */
+
+  if(menuButton && mobileNav){
+
+    menuButton.addEventListener(
+      'click',
+      function(){
+
+        const isOpen =
+          mobileNav.classList.toggle('open');
+
+        menuButton.setAttribute(
+          'aria-expanded',
+          String(isOpen)
+        );
+
+        if(nav){
+          nav.classList.remove('nav-hidden');
+        }
+
+      }
     );
 
-    if (!elements.length) {
-      return;
-    }
 
-    if (
-      state.reducedMotion ||
-      !("IntersectionObserver" in window)
-    ) {
+    mobileNav
+      .querySelectorAll('a')
+      .forEach(function(link){
 
-      elements.forEach(element => {
-        element.classList.add(
-          "visible"
+        link.addEventListener(
+          'click',
+          function(){
+
+            mobileNav.classList.remove('open');
+
+            menuButton.setAttribute(
+              'aria-expanded',
+              'false'
+            );
+
+          }
         );
+
       });
 
-      return;
-    }
+  }
 
-    const observer =
+
+
+  /* =========================
+     REVEAL
+  ========================= */
+
+  const revealElements =
+    document.querySelectorAll('.reveal');
+
+
+  if(
+    'IntersectionObserver' in window
+  ){
+
+    const revealObserver =
       new IntersectionObserver(
-        entries => {
+        function(entries){
 
-          entries.forEach(entry => {
+          entries.forEach(
+            function(entry){
 
-            if (!entry.isIntersecting) {
-              return;
+              if(entry.isIntersecting){
+
+                entry.target
+                  .classList
+                  .add('visible');
+
+                revealObserver
+                  .unobserve(entry.target);
+
+              }
+
             }
-
-            const element =
-              entry.target;
-
-            element.classList.add(
-              "visible"
-            );
-
-            observer.unobserve(
-              element
-            );
-
-          });
+          );
 
         },
         {
-          threshold:
-            CONFIG.revealThreshold,
-
-          rootMargin:
-            CONFIG.revealRootMargin
+          threshold:.08,
+          rootMargin:'0px 0px -40px 0px'
         }
       );
 
-    state.revealObserver =
-      observer;
 
-    elements.forEach(element => {
+    revealElements.forEach(
+      function(element){
 
-      const rect =
-        element.getBoundingClientRect();
-
-      const isInitiallyVisible =
-        rect.top < window.innerHeight &&
-        rect.bottom > 0;
-
-      if (isInitiallyVisible) {
-
-        element.classList.add(
-          "visible"
-        );
-
-      } else {
-
-        observer.observe(
-          element
-        );
+        revealObserver.observe(element);
 
       }
+    );
 
-    });
+  }else{
 
-    // Enable animation styles after observers
-    // have been initialized to prevent blank
-    // content on unsupported browsers.
+    revealElements.forEach(
+      function(element){
 
-    document.body.classList.add(
-      "js-ready"
+        element.classList.add('visible');
+
+      }
     );
 
   }
 
-  /* ========================================================
-     09 — HERO ENTRANCE
-     ======================================================== */
 
-  function initializeHeroEntrance() {
 
-    const hero = $(
-      SELECTORS.hero
-    );
+  /* =========================
+     ACTIVE NAV SECTION
+  ========================= */
 
-    if (!hero) {
-      return;
-    }
+  const sections =
+    document.querySelectorAll('section[id]');
 
-    const heroElements = $$(
-      ".reveal",
-      hero
-    );
+  const desktopLinks =
+    document.querySelectorAll('.desktop-nav a');
 
-    if (!heroElements.length) {
-      return;
-    }
 
-    heroElements.forEach(element => {
+  if(
+    'IntersectionObserver' in window
+  ){
 
-      element.classList.add(
-        "visible"
-      );
+    const sectionObserver =
+      new IntersectionObserver(
+        function(entries){
 
-    });
+          entries.forEach(
+            function(entry){
 
-    if (state.reducedMotion) {
-      return;
-    }
+              if(!entry.isIntersecting){
+                return;
+              }
 
-    hero.classList.add(
-      "hero-loaded"
-    );
+              const id =
+                entry.target.id;
 
-  }
+              desktopLinks.forEach(
+                function(link){
 
-  /* ========================================================
-     10 — IMAGE HANDLING
-     ======================================================== */
+                  link.classList.remove('active');
 
-  function initializeImages() {
+                  if(
+                    link.getAttribute('href') ===
+                    '#' + id
+                  ){
+                    link.classList.add('active');
+                  }
 
-    const images = $$("img");
-
-    images.forEach(image => {
-
-      image.decoding = "async";
-
-      const isHeroImage =
-        Boolean(
-          image.closest(".hero")
-        );
-
-      if (isHeroImage) {
-
-        image.loading = "eager";
-
-        image.setAttribute(
-          "fetchpriority",
-          "high"
-        );
-
-      } else {
-
-        if (
-          !image.hasAttribute(
-            "loading"
-          )
-        ) {
-
-          image.loading = "lazy";
-
-        }
-
-      }
-
-      function handleLoadedImage() {
-
-        image.classList.add(
-          "image-loaded"
-        );
-
-      }
-
-      function handleImageError() {
-
-        image.classList.add(
-          "image-error"
-        );
-
-        // Do not replace or alter the
-        // original image URL.
-
-      }
-
-      if (
-        image.complete &&
-        image.naturalWidth > 0
-      ) {
-
-        handleLoadedImage();
-
-      } else if (
-        image.complete &&
-        image.naturalWidth === 0
-      ) {
-
-        handleImageError();
-
-      } else {
-
-        image.addEventListener(
-          "load",
-          handleLoadedImage,
-          { once: true }
-        );
-
-        image.addEventListener(
-          "error",
-          handleImageError,
-          { once: true }
-        );
-
-      }
-
-    });
-
-  }
-
-  /* ========================================================
-     11 — INTERACTIVE DETAILS
-     ======================================================== */
-
-  function initializeInteractiveDetails() {
-
-    initializePointerEffects();
-
-    initializeTicker();
-
-    initializeExternalLinks();
-
-  }
-
-  /* --------------------------------------------------------
-     POINTER EFFECTS
-     -------------------------------------------------------- */
-
-  function initializePointerEffects() {
-
-    if (state.reducedMotion) {
-      return;
-    }
-
-    const finePointer =
-      window.matchMedia(
-        "(hover: hover) and (pointer: fine)"
-      );
-
-    if (!finePointer.matches) {
-      return;
-    }
-
-    const cards = $$(
-      ".skill-card, .tool-card, .uni-card, .achievement"
-    );
-
-    cards.forEach(card => {
-
-      let frame = null;
-
-      card.addEventListener(
-        "pointermove",
-        event => {
-
-          if (frame !== null) {
-            return;
-          }
-
-          const x = event.clientX;
-          const y = event.clientY;
-
-          frame = requestAnimationFrame(
-            () => {
-
-              const rect =
-                card.getBoundingClientRect();
-
-              const localX =
-                x - rect.left;
-
-              const localY =
-                y - rect.top;
-
-              const percentX =
-                (localX / rect.width) *
-                100;
-
-              const percentY =
-                (localY / rect.height) *
-                100;
-
-              card.style.setProperty(
-                "--mouse-x",
-                `${percentX}%`
+                }
               );
-
-              card.style.setProperty(
-                "--mouse-y",
-                `${percentY}%`
-              );
-
-              frame = null;
 
             }
           );
 
         },
-        { passive: true }
-      );
-
-      card.addEventListener(
-        "pointerleave",
-        () => {
-
-          if (frame !== null) {
-
-            cancelAnimationFrame(
-              frame
-            );
-
-            frame = null;
-
-          }
-
-          card.style.removeProperty(
-            "--mouse-x"
-          );
-
-          card.style.removeProperty(
-            "--mouse-y"
-          );
-
+        {
+          rootMargin:'-35% 0px -55% 0px',
+          threshold:0
         }
       );
 
-    });
 
-  }
+    sections.forEach(
+      function(section){
 
-  /* --------------------------------------------------------
-     TICKER
-     -------------------------------------------------------- */
-
-  function initializeTicker() {
-
-    const ticker = $(
-      SELECTORS.ticker
-    );
-
-    if (!ticker) {
-      return;
-    }
-
-    ticker.setAttribute(
-      "aria-label",
-      ticker.textContent
-        .replace(/\s+/g, " ")
-        .trim()
-    );
-
-    if (state.reducedMotion) {
-
-      ticker.style.animation = "none";
-
-    }
-
-  }
-
-  /* --------------------------------------------------------
-     EXTERNAL LINKS
-     -------------------------------------------------------- */
-
-  function initializeExternalLinks() {
-
-    const externalLinks = $$(
-      'a[target="_blank"]'
-    );
-
-    externalLinks.forEach(link => {
-
-      const existingRel =
-        link.getAttribute("rel") || "";
-
-      const values = new Set(
-        existingRel
-          .split(/\s+/)
-          .filter(Boolean)
-      );
-
-      values.add("noopener");
-      values.add("noreferrer");
-
-      link.setAttribute(
-        "rel",
-        [...values].join(" ")
-      );
-
-    });
-
-  }
-
-  /* ========================================================
-     12 — ACCESSIBILITY
-     ======================================================== */
-
-  function initializeAccessibility() {
-
-    initializeMotionPreference();
-
-    initializeKeyboardSupport();
-
-    initializeFocusHandling();
-
-  }
-
-  /* --------------------------------------------------------
-     REDUCED MOTION
-     -------------------------------------------------------- */
-
-  function initializeMotionPreference() {
-
-    const mediaQuery =
-      window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      );
-
-    const handleChange = event => {
-
-      state.reducedMotion =
-        event.matches;
-
-      if (event.matches) {
-
-        $$(SELECTORS.reveal).forEach(
-          element => {
-
-            element.classList.add(
-              "visible"
-            );
-
-          }
-        );
-
-        const ticker = $(
-          SELECTORS.ticker
-        );
-
-        if (ticker) {
-
-          ticker.style.animation =
-            "none";
-
-        }
-
-      } else {
-
-        const ticker = $(
-          SELECTORS.ticker
-        );
-
-        if (ticker) {
-
-          ticker.style.removeProperty(
-            "animation"
-          );
-
-        }
+        sectionObserver.observe(section);
 
       }
-
-    };
-
-    if (
-      typeof mediaQuery.addEventListener ===
-      "function"
-    ) {
-
-      mediaQuery.addEventListener(
-        "change",
-        handleChange
-      );
-
-    } else if (
-      typeof mediaQuery.addListener ===
-      "function"
-    ) {
-
-      mediaQuery.addListener(
-        handleChange
-      );
-
-    }
+    );
 
   }
 
-  /* --------------------------------------------------------
-     KEYBOARD SUPPORT
-     -------------------------------------------------------- */
 
-  function initializeKeyboardSupport() {
 
-    document.addEventListener(
-      "keydown",
-      event => {
+  /* =========================
+     SMOOTH ANCHOR LINKS
+  ========================= */
 
-        // Home key: jump to beginning
-        // when not editing a text field.
+  document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(function(link){
 
-        const active =
-          document.activeElement;
+      link.addEventListener(
+        'click',
+        function(event){
 
-        const isEditing =
-          active &&
-          (
-            active.tagName === "INPUT" ||
-            active.tagName === "TEXTAREA" ||
-            active.tagName === "SELECT" ||
-            active.isContentEditable
-          );
+          const id =
+            link.getAttribute('href');
 
-        if (isEditing) {
-          return;
-        }
+          if(
+            !id ||
+            id === '#'
+          ){
+            return;
+          }
 
-        if (
-          event.key === "Home" &&
-          !event.ctrlKey &&
-          !event.metaKey &&
-          !event.altKey &&
-          !event.shiftKey &&
-          !state.menuOpen
-        ) {
+          const target =
+            document.querySelector(id);
+
+          if(!target){
+            return;
+          }
 
           event.preventDefault();
 
-          window.scrollTo({
-            top: 0,
-            behavior: state.reducedMotion
-              ? "auto"
-              : "smooth"
+          target.scrollIntoView({
+            behavior:'smooth',
+            block:'start'
           });
 
         }
+      );
+
+    });
+
+
+
+  /* =========================
+     DESKTOP CARD TILT
+  ========================= */
+
+  const desktopPointer =
+    window.matchMedia(
+      '(hover:hover) and (pointer:fine)'
+    );
+
+
+  if(desktopPointer.matches){
+
+    document
+      .querySelectorAll('.skill-card')
+      .forEach(function(card){
+
+        card.addEventListener(
+          'mousemove',
+          function(event){
+
+            const rect =
+              card.getBoundingClientRect();
+
+            const x =
+              (
+                event.clientX -
+                rect.left
+              ) /
+              rect.width -
+              .5;
+
+            const y =
+              (
+                event.clientY -
+                rect.top
+              ) /
+              rect.height -
+              .5;
+
+            card.style.transform =
+              'perspective(1000px)' +
+              ' rotateX(' +
+              (y * -3) +
+              'deg)' +
+              ' rotateY(' +
+              (x * 3) +
+              'deg)' +
+              ' translateY(-6px)';
+
+          }
+        );
+
+
+        card.addEventListener(
+          'mouseleave',
+          function(){
+
+            card.style.transform = '';
+
+          }
+        );
+
+      });
+
+
+    /*
+     * Magnetic Explore button
+     */
+
+    const explore =
+      document.querySelector('.explore');
+
+    if(explore){
+
+      explore.addEventListener(
+        'mousemove',
+        function(event){
+
+          const rect =
+            explore.getBoundingClientRect();
+
+          const x =
+            event.clientX -
+            rect.left -
+            rect.width / 2;
+
+          const y =
+            event.clientY -
+            rect.top -
+            rect.height / 2;
+
+          explore.style.transform =
+            'translate(' +
+            (x * .12) +
+            'px,' +
+            (y * .18) +
+            'px)';
+
+        }
+      );
+
+
+      explore.addEventListener(
+        'mouseleave',
+        function(){
+
+          explore.style.transform = '';
+
+        }
+      );
+
+    }
+
+  }
+
+
+
+  /* =========================
+     RETRACE PHONE PARALLAX
+  ========================= */
+
+  const phoneStage =
+    document.querySelector('.phone-stage');
+
+  const phones =
+    document.querySelectorAll('.phone');
+
+  let phoneTicking = false;
+
+
+  function updatePhones(){
+
+    /*
+     * CSS controls phone position
+     * on mobile.
+     */
+
+    if(
+      window.innerWidth <= 650 ||
+      !phoneStage
+    ){
+
+      phoneTicking = false;
+      return;
+
+    }
+
+
+    const rect =
+      phoneStage.getBoundingClientRect();
+
+    const viewportCenter =
+      window.innerHeight / 2;
+
+    const stageCenter =
+      rect.top +
+      rect.height / 2;
+
+    const difference =
+      stageCenter -
+      viewportCenter;
+
+
+    phones.forEach(
+      function(phone){
+
+        const speed =
+          Number(
+            phone.dataset.phoneSpeed ||
+            -.3
+          );
+
+        let movement =
+          difference *
+          speed *
+          .13;
+
+        movement =
+          Math.max(
+            -45,
+            Math.min(
+              45,
+              movement
+            )
+          );
+
+
+        if(
+          phone.classList.contains(
+            'phone-main'
+          )
+        ){
+
+          phone.style.transform =
+            'translateX(-50%) ' +
+            'translateY(' +
+            movement +
+            'px)';
+
+        }
+
+        else if(
+          phone.classList.contains(
+            'phone-left'
+          )
+        ){
+
+          phone.style.transform =
+            'rotate(-7deg) ' +
+            'translateY(' +
+            movement +
+            'px)';
+
+        }
+
+        else{
+
+          phone.style.transform =
+            'rotate(7deg) ' +
+            'translateY(' +
+            movement +
+            'px)';
+
+        }
 
       }
     );
 
+
+    phoneTicking = false;
+
   }
 
-  /* --------------------------------------------------------
-     FOCUS HANDLING
-     -------------------------------------------------------- */
 
-  function initializeFocusHandling() {
+  function requestPhoneUpdate(){
 
-    let keyboardMode = false;
+    if(!phoneTicking){
 
-    document.addEventListener(
-      "keydown",
-      event => {
+      window.requestAnimationFrame(
+        updatePhones
+      );
 
-        if (event.key === "Tab") {
+      phoneTicking = true;
 
-          keyboardMode = true;
+    }
 
-          document.body.classList.add(
-            "keyboard-navigation"
+  }
+
+
+
+  /* =========================
+     IMAGE FALLBACK
+  ========================= */
+
+  document
+    .querySelectorAll('img')
+    .forEach(function(img){
+
+      img.addEventListener(
+        'error',
+        function(){
+
+          const fallback =
+            img.dataset.fallback;
+
+          const used =
+            img.dataset.fallbackUsed;
+
+
+          if(
+            fallback &&
+            used !== 'true'
+          ){
+
+            img.dataset.fallbackUsed =
+              'true';
+
+            img.src = fallback;
+
+            return;
+
+          }
+
+
+          console.error(
+            'Image failed to load:',
+            img.src
           );
 
         }
+      );
 
-      }
-    );
+    });
 
-    document.addEventListener(
-      "pointerdown",
-      () => {
 
-        if (!keyboardMode) {
-          return;
-        }
 
-        keyboardMode = false;
+  /* =========================
+     MAIN SCROLL EVENT
+  ========================= */
 
-        document.body.classList.remove(
-          "keyboard-navigation"
-        );
+  function onScroll(){
 
-      },
-      { passive: true }
-    );
+    updateScroll();
+    requestPhoneUpdate();
 
   }
 
-  /* ========================================================
-     13 — PAGE VISIBILITY
-     ======================================================== */
 
-  function initializePageVisibility() {
+  window.addEventListener(
+    'scroll',
+    onScroll,
+    {
+      passive:true
+    }
+  );
 
-    document.addEventListener(
-      "visibilitychange",
-      () => {
 
-        if (!document.hidden) {
+  window.addEventListener(
+    'resize',
+    requestPhoneUpdate
+  );
 
-          updateScrollProgress();
 
-          updateActiveNavigation();
+  requestPhoneUpdate();
 
-        }
-
-      }
-    );
-
-    window.addEventListener(
-      "pageshow",
-      () => {
-
-        updateScrollProgress();
-
-        updateActiveNavigation();
-
-      }
-    );
-
-  }
-
-  /* ========================================================
-     14 — INITIALIZE EVERYTHING
-     ======================================================== */
-
-  function boot() {
-
-    initialize();
-
-    initializePageVisibility();
-
-  }
-
-  if (
-    document.readyState === "loading"
-  ) {
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      boot,
-      { once: true }
-    );
-
-  } else {
-
-    boot();
-
-  }
-
-})();
+});
