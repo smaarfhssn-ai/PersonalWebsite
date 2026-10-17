@@ -6714,3 +6714,39 @@ body {
     transition: none;
   }
 }
+
+/* ==================================
+   ACHIEVEMENTS — SPACING FIX
+================================== */
+
+.achievements-section .award-feature,
+.achievements-section .android-award,
+.achievements-section .achievement-visual {
+  margin-bottom: 120px;
+}
+
+/* Spacing after DISCONT 2025 */
+.achievements-section .discont-showcase {
+  margin-bottom: 120px;
+}
+
+/* Spacing between achievement details and button */
+.achievements-section .award-copy .achievement-video-btn {
+  margin-top: 32px;
+}
+
+/* Spacing after DISCONT gallery */
+.achievements-section .discont-gallery + .achievement-video-btn {
+  margin-top: 40px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .achievements-section .award-feature,
+  .achievements-section .android-award,
+  .achievements-section .achievement-visual,
+  .achievements-section .discont-showcase {
+    margin-bottom: 80px;
+  }
+}
+
