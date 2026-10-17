@@ -6400,3 +6400,243 @@ body {
     transform: none;
   }
 }
+
+/* =========================================
+   CAREER EXPLORATION GOLD AWARD
+   ========================================= */
+
+.career-award {
+  --career-navy: #00284F;
+  --career-blue: #004E9C;
+  --career-bright: #0080FF;
+  --career-gold: #EDC61E;
+
+  margin: 100px 0 40px;
+  padding: clamp(22px, 5vw, 60px);
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      ellipse at 90% 0%,
+      rgba(0, 128, 255, 0.2),
+      transparent 50%
+    ),
+    var(--career-navy);
+  color: #fff;
+  overflow: hidden;
+}
+
+.career-award * {
+  box-sizing: border-box;
+}
+
+.career-award-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.career-award-year {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  color: #b8cce3;
+}
+
+.career-award-medal {
+  color: var(--career-gold);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.career-award-heading {
+  padding: 50px 0 42px;
+}
+
+.career-award-heading > p:first-child {
+  margin: 0 0 18px;
+  color: var(--career-gold);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.career-award-heading h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(54px, 9vw, 126px);
+  font-weight: 900;
+  line-height: .95;
+  letter-spacing: -.065em;
+}
+
+.career-award-heading h3 span {
+  color: var(--career-gold);
+}
+
+.career-award-event {
+  max-width: 680px;
+  margin: 28px 0 0;
+  color: #c6d7e9;
+  font-size: clamp(15px, 2vw, 20px);
+  line-height: 1.5;
+}
+
+.career-award-banner {
+  margin: 0;
+}
+
+.career-award-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.career-award-banner figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 18px 2px 24px;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.career-award-banner figcaption span {
+  color: #a9bfd8;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.career-award-banner figcaption strong {
+  color: var(--career-gold);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.career-award-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 26px;
+}
+
+.career-award-gallery figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.career-award-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px;
+  transition:
+    transform .5s ease,
+    filter .5s ease;
+}
+
+.career-award-gallery figure {
+  overflow: hidden;
+}
+
+.career-award-gallery figure:hover img {
+  transform: scale(1.025);
+}
+
+.career-award-gallery figcaption {
+  padding: 14px 2px 0;
+  color: #c6d7e9;
+  font-size: 13px;
+  letter-spacing: .02em;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .career-award {
+    margin-top: 70px;
+    border-radius: 22px;
+  }
+
+  .career-award-heading {
+    padding: 40px 0 34px;
+  }
+
+  .career-award-gallery {
+    gap: 14px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .career-award {
+    margin: 55px 0 25px;
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .career-award-header {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .career-award-year,
+  .career-award-medal {
+    font-size: 10px;
+  }
+
+  .career-award-heading {
+    padding: 35px 0 30px;
+  }
+
+  .career-award-heading h3 {
+    font-size: clamp(50px, 13vw, 78px);
+  }
+
+  .career-award-event {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .career-award-banner img {
+    border-radius: 10px;
+  }
+
+  .career-award-banner figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .career-award-gallery {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .career-award-gallery img {
+    border-radius: 9px;
+  }
+
+  .career-award-gallery figcaption {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .career-award-gallery img {
+    transition: none;
+  }
+}
