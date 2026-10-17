@@ -6715,38 +6715,308 @@ body {
   }
 }
 
-/* ==================================
-   ACHIEVEMENTS — SPACING FIX
-================================== */
+
+/* ==========================================================
+   ACHIEVEMENTS — FINAL RESPONSIVE LAYOUT FIX
+   Full Navy + Gold
+   Desktop / iPad / Mobile
+========================================================== */
+
+/* Consistent spacing between achievement items */
+
+.achievements-section .award-feature,
+.achievements-section .android-award {
+  margin: 0;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.achievements-section .discont-showcase {
+  margin: 0;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.achievements-section .achievement-visual {
+  margin-top: 100px;
+  margin-bottom: 0;
+}
+
+.achievements-section .achievement-visual +
+.achievement-visual {
+  margin-top: 100px;
+}
+
+.achievements-section .cricket-achievement {
+  margin-bottom: 0;
+}
+
+/* Prevent grid content from overflowing */
 
 .achievements-section .award-feature,
 .achievements-section .android-award,
-.achievements-section .achievement-visual {
-  margin-bottom: 120px;
+.achievements-section .achievement-visual,
+.achievements-section .achievement-visual.reverse {
+  min-width: 0;
 }
 
-/* Spacing after DISCONT 2025 */
-.achievements-section .discont-showcase {
-  margin-bottom: 120px;
+.achievements-section .award-feature {
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
 }
 
-/* Spacing between achievement details and button */
-.achievements-section .award-copy .achievement-video-btn {
-  margin-top: 32px;
+.achievements-section .android-award {
+  grid-template-columns:
+    minmax(0, .85fr)
+    minmax(0, 1.15fr);
 }
 
-/* Spacing after DISCONT gallery */
-.achievements-section .discont-gallery + .achievement-video-btn {
-  margin-top: 40px;
+.achievements-section .award-copy,
+.achievements-section .android-award-copy,
+.achievements-section .achievement-visual-copy,
+.achievements-section .discont-heading > * {
+  min-width: 0;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
+/* Keep long achievement titles inside their columns */
+
+.achievements-section .award-copy h3,
+.achievements-section .android-award-copy h3,
+.achievements-section .achievement-visual-copy h3,
+.achievements-section .discont-heading h3 {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
+}
+
+.achievements-section .achievement-visual-copy h3 {
+  font-size: clamp(30px, 3.8vw, 58px);
+  line-height: 1.02;
+  letter-spacing: -.05em;
+}
+
+/* Keep images and copy properly aligned */
+
+.achievements-section .achievement-visual-image,
+.achievements-section .achievement-visual-copy {
+  min-width: 0;
+}
+
+.achievements-section .achievement-visual-copy {
+  height: auto;
+  min-height: 560px;
+}
+
+.achievements-section .achievement-visual-image {
+  height: 560px;
+}
+
+/* Video button spacing */
+
+.achievements-section .achievement-video-btn {
+  margin-top: 36px;
+}
+
+.achievements-section .award-copy
+.achievement-video-btn {
+  margin-top: 36px;
+}
+
+.achievements-section .discont-gallery +
+.achievement-video-btn {
+  margin-top: 42px;
+}
+
+/* ==========================================================
+   TABLET / IPAD
+========================================================== */
+
+@media (min-width: 651px) and (max-width: 1100px) {
+
+  .achievements-section .award-feature,
+  .achievements-section .android-award {
+    gap: 36px;
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .achievements-section .discont-showcase {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .achievements-section .award-feature {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+  }
+
+  .achievements-section .android-award {
+    grid-template-columns:
+      minmax(0, .9fr)
+      minmax(0, 1.1fr);
+  }
+
+  .achievements-section .award-copy h3 {
+    font-size: clamp(34px, 4.4vw, 56px);
+  }
+
+  .achievements-section .android-award-copy h3 {
+    font-size: clamp(32px, 4.2vw, 54px);
+  }
+
+  .achievements-section .achievement-visual,
+  .achievements-section .achievement-visual.reverse {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+    gap: 18px;
+    margin-top: 90px;
+  }
+
+  .achievements-section .achievement-visual.reverse
+  .achievement-visual-image {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .achievements-section .achievement-visual.reverse
+  .achievement-visual-copy {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .achievements-section .achievement-visual-image {
+    height: 460px;
+  }
+
+  .achievements-section .achievement-visual-copy {
+    height: auto;
+    min-height: 460px;
+    padding: 30px;
+  }
+
+  .achievements-section .achievement-visual-copy h3 {
+    font-size: clamp(28px, 3.6vw, 44px);
+    line-height: 1.04;
+  }
+
+  .achievements-section .achievement-visual-copy p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .achievements-section .achievement-visual +
+  .achievement-visual {
+    margin-top: 90px;
+  }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 650px) {
+
+  .achievements-section .year-heading {
+    margin-top: 85px;
+  }
+
+  .achievements-section .award-feature,
+  .achievements-section .android-award {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .achievements-section .discont-showcase {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .achievements-section .achievement-visual,
+  .achievements-section .achievement-visual.reverse {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin-top: 75px;
+  }
+
+  .achievements-section .achievement-visual +
+  .achievement-visual {
+    margin-top: 75px;
+  }
+
+  .achievements-section .achievement-visual
+  .achievement-visual-image,
+  .achievements-section .achievement-visual.reverse
+  .achievement-visual-image {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .achievements-section .achievement-visual
+  .achievement-visual-copy,
+  .achievements-section .achievement-visual.reverse
+  .achievement-visual-copy {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: auto;
+    min-height: 330px;
+    padding: 28px;
+  }
+
+  .achievements-section .achievement-visual-copy h3 {
+    font-size: clamp(34px, 10vw, 50px);
+    line-height: 1.02;
+  }
+
+  .achievements-section .cricket-achievement
+  .achievement-visual-image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .achievements-section .award-copy h3 {
+    font-size: clamp(36px, 10vw, 55px);
+  }
+
+  .achievements-section .android-award-copy h3 {
+    font-size: clamp(34px, 9vw, 50px);
+  }
+
+  .achievements-section .achievement-video-btn {
+    margin-top: 28px;
+  }
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 380px) {
+
+  .achievements-section .achievement-visual-copy {
+    padding: 24px;
+  }
+
+  .achievements-section .achievement-visual-copy h3 {
+    font-size: 32px;
+  }
+
   .achievements-section .award-feature,
   .achievements-section .android-award,
-  .achievements-section .achievement-visual,
   .achievements-section .discont-showcase {
-    margin-bottom: 80px;
+    padding-top: 55px;
+    padding-bottom: 55px;
   }
-}
 
+}
