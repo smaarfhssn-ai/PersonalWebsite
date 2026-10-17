@@ -638,3 +638,167 @@ document.addEventListener('DOMContentLoaded', function () {
   requestPhoneUpdate();
 
 });
+
+// ==================================================
+// CREATIVE WORKS — HORIZONTAL SHOWCASE
+// ==================================================
+
+(() => {
+  const track = document.getElementById("creativeTrack");
+  const prev = document.getElementById("creativePrev");
+  const next = document.getElementById("creativeNext");
+  const current = document.getElementById("creativeCurrent");
+  const total = document.getElementById("creativeTotal");
+  const progress = document.getElementById("creativeProgress");
+
+  const lightbox = document.getElementById("creativeLightbox");
+  const lightboxImage = document.getElementById("creativeLightboxImage");
+  const lightboxTitle = document.getElementById("creativeLightboxTitle");
+  const closeButton = document.getElementById("creativeLightboxClose");
+
+  if (!track) return;
+
+  const slides = [...track.querySelectorAll(".creative-slide")];
+  const count = slides.length;
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
+  let activeIndex = 0;
+  let lastFocusedElement = null;
+  let scrollFrame = null;
+
+  const formatNumber = number =>
+    String(number).padStart(2, "0");
+
+  total.textContent = formatNumber(count);
+
+  function getActiveIndex() {
+    const trackCenter =
+      track.getBoundingClientRect().left +
+      track.clientWidth / 2;
+
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+
+    slides.forEach((slide, index) => {
+      const rect = slide.getBoundingClientRect();
+      const slideCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(slideCenter - trackCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    return closestIndex;
+  }
+
+  function updateControls() {
+    activeIndex = getActiveIndex();
+
+    current.textContent = formatNumber(activeIndex + 1);
+
+    progress.style.width =
+      `${((activeIndex + 1) / count) * 100}%`;
+
+    prev.disabled = activeIndex === 0;
+    next.disabled = activeIndex === count - 1;
+  }
+
+  function goToSlide(index) {
+    const target = Math.max(
+      0,
+      Math.min(index, count - 1)
+    );
+
+    slides[target].scrollIntoView({
+      behavior: reducedMotion.matches ? "instant" : "smooth",
+      block: "nearest",
+      inline: "center"
+    });
+  }
+
+  prev.addEventListener("click", () => {
+    goToSlide(getActiveIndex() - 1);
+  });
+
+  next.addEventListener("click", () => {
+    goToSlide(getActiveIndex() + 1);
+  });
+
+  track.addEventListener("scroll", () => {
+    if (scrollFrame !== null) {
+      cancelAnimationFrame(scrollFrame);
+    }
+
+    scrollFrame = requestAnimationFrame(() => {
+      updateControls();
+      scrollFrame = null;
+    });
+  }, { passive: true });
+
+  window.addEventListener("resize", updateControls);
+
+  // LIGHTBOX
+
+  function openLightbox(button) {
+    lastFocusedElement = document.activeElement;
+
+    lightboxImage.src = button.dataset.creativeImage;
+    lightboxImage.alt = button.dataset.creativeTitle || "Design preview";
+    lightboxTitle.textContent =
+      button.dataset.creativeTitle || "";
+
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+
+    document.body.classList.add("creative-lightbox-open");
+
+    closeButton.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+
+    document.body.classList.remove("creative-lightbox-open");
+
+    lightboxImage.removeAttribute("src");
+
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+    }
+  }
+
+  track.querySelectorAll(".creative-image-button")
+    .forEach(button => {
+      button.addEventListener("click", () => {
+        openLightbox(button);
+      });
+    });
+
+  closeButton.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", event => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", event => {
+    if (!lightbox.classList.contains("open")) return;
+
+    if (event.key === "Escape") {
+      closeLightbox();
+    }
+
+    if (event.key === "Tab") {
+      event.preventDefault();
+      closeButton.focus();
+    }
+  });
+
+  updateControls();
+})();
