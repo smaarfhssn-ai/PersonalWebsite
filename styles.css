@@ -7528,3 +7528,238 @@ body.creative-lightbox-open {
   }
 }
 
+/* =========================================
+   GAMIFEST@SESTER 2026 — LAUNCH FEATURE
+========================================= */
+
+.gamifest-launch {
+  --gf-navy: #00284F;
+  --gf-blue: #004E9C;
+  --gf-electric: #0080FF;
+  --gf-gold: #EDC61E;
+
+  position: relative;
+  overflow: hidden;
+  padding: clamp(80px, 12vw, 150px) 24px 35px;
+
+  background:
+    radial-gradient(
+      ellipse at 85% 20%,
+      rgba(0, 128, 255, .23),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      #00284F,
+      #00172E
+    );
+
+  color: #FFFFFF;
+}
+
+.gamifest-launch::before {
+  content: "GAMIFEST";
+  position: absolute;
+  top: 12%;
+  right: -3%;
+
+  color: rgba(255,255,255,.025);
+  font-size: clamp(90px, 19vw, 260px);
+  font-weight: 900;
+  letter-spacing: -.09em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.gamifest-launch-inner {
+  position: relative;
+  z-index: 1;
+
+  width: min(100%, 1240px);
+  margin: 0 auto;
+}
+
+.gamifest-launch-eyebrow {
+  color: var(--gf-gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
+
+.gamifest-launch-content {
+  padding: clamp(65px, 10vw, 125px) 0;
+}
+
+.gamifest-launch-label {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding: 10px 15px;
+
+  border: 1px solid rgba(237,198,30,.45);
+  border-radius: 100px;
+
+  color: var(--gf-gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.gamifest-launch h2 {
+  max-width: 1050px;
+  margin: 0;
+
+  color: #FFFFFF;
+  font-size: clamp(48px, 10vw, 125px);
+  font-weight: 900;
+  line-height: .95;
+  letter-spacing: -.075em;
+  overflow-wrap: anywhere;
+}
+
+.gamifest-launch h2 > span {
+  color: var(--gf-electric);
+}
+
+.gamifest-launch h2 small {
+  display: block;
+  margin-top: 16px;
+
+  color: var(--gf-gold);
+  font-size: .48em;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+
+.gamifest-launch-content > p {
+  margin-top: 30px;
+
+  color: #B7CBE0;
+  font-size: clamp(16px, 2.2vw, 23px);
+  line-height: 1.5;
+}
+
+/* YouTube button */
+
+.gamifest-launch-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  max-width: 100%;
+  margin-top: 38px;
+  padding: 17px 24px;
+
+  border: 1px solid var(--gf-gold);
+  border-radius: 100px;
+
+  background: var(--gf-gold);
+  color: var(--gf-navy);
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    transform .35s ease,
+    background .35s ease,
+    color .35s ease,
+    box-shadow .35s ease;
+}
+
+.gamifest-launch-button:hover {
+  transform: translateY(-4px);
+
+  background: var(--gf-electric);
+  border-color: var(--gf-electric);
+  color: #FFFFFF;
+
+  box-shadow: 0 15px 40px rgba(0,128,255,.25);
+}
+
+.gamifest-play-icon {
+  display: grid;
+  place-items: center;
+
+  width: 27px;
+  height: 27px;
+  flex: 0 0 27px;
+
+  padding-left: 2px;
+  border-radius: 50%;
+
+  background: var(--gf-navy);
+  color: #FFFFFF;
+  font-size: 10px;
+}
+
+.gamifest-launch-arrow {
+  font-size: 19px;
+  line-height: 1;
+  transition: transform .3s ease;
+}
+
+.gamifest-launch-button:hover .gamifest-launch-arrow {
+  transform: translate(3px, -3px);
+}
+
+.gamifest-launch-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.16);
+
+  color: #AFC7E0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .gamifest-launch {
+    padding: 75px 20px 28px;
+  }
+
+  .gamifest-launch-content {
+    padding: 75px 0;
+  }
+
+  .gamifest-launch h2 {
+    font-size: clamp(43px, 12vw, 72px);
+  }
+
+  .gamifest-launch-content > p {
+    margin-top: 24px;
+    font-size: 16px;
+  }
+
+  .gamifest-launch-button {
+    width: 100%;
+    gap: 10px;
+    margin-top: 30px;
+    padding: 15px 13px;
+    font-size: 9px;
+    letter-spacing: .045em;
+  }
+
+  .gamifest-launch-footer {
+    flex-direction: column;
+    gap: 12px;
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gamifest-launch-button,
+  .gamifest-launch-arrow {
+    transition: none;
+  }
+}
+
